@@ -11,11 +11,11 @@
 		<item id="6">
 			<label>Nastavení SCC</label>
 			<label2>Výběr položek</label2>
-			<visible>!Skin.HasSetting(HomeMenuNoSCCButton) + System.HasAddon(plugin.video.stream-cinema-2-release)</visible>
+			<visible>!Skin.HasSetting(HomeMenuNoSCCButton) + System.AddonIsEnabled(plugin.video.stream-cinema-2-release)</visible>
 		</item>
-		<!-- <item id="8"> -->
-			<!-- <label>OSD Setting</label> -->
-		<!-- </item> -->
+		<item id="8">
+			<label>OSD Setting</label>
+		</item>
 	</include>
 	<include name="Ads">
 		<item id="7">
@@ -24,7 +24,7 @@
 		</item>
 	</include>
 	
-	<!-- GENERAL -->
+	<!-- Obecné -->
 	<include name="Rating">
 		<control type="radiobutton" id="2002">
 						<description>Show Advanced Settings</description>
@@ -65,7 +65,7 @@
 						<selected>Skin.HasSetting(HomeMenuNoSCCButton)</selected>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<visible>System.HasAddon(plugin.video.stream-cinema-2-release)</visible>
+						<visible>System.AddonIsEnabled(plugin.video.stream-cinema-2-release)</visible>
 					</control>
 					<control type="radiobutton" id="2002">
 						<description>Show Advanced Settings</description>
@@ -92,7 +92,7 @@
 						<selected>Skin.HasSetting(EmuElecOn)</selected>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<visible>System.HasAddon(script.emuelec.amlogic-ng.launcher)</visible>
+						<visible>System.AddonIsEnabled(script.emuelec.amlogic-ng.launcher)</visible>
 					</control>
 	</include>
 
@@ -112,7 +112,7 @@
 						<onup>9005</onup>
 						<ondown>9005</ondown>
 						
-<!-- ROZŠÍŘENÁ NASTAVENÍ DOMOVSKÉ OBRAZOVKY -->
+	<!-- ROZŠÍŘENÁ NASTAVENÍ DOMOVSKÉ OBRAZOVKY -->
 						<control type="label" id="500">
 							<width>750</width>
 							<height>45</height>
@@ -161,7 +161,7 @@
 							<selected>Skin.HasSetting(HolidaysOn)</selected>
 							<texturefocus>MenuItemFO.png</texturefocus>
 							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<visible>System.HasAddon(service.holiday.vanio)</visible>
+							<visible>System.AddonIsEnabled(service.holiday.vanio)</visible>
 						</control>
 						<control type="radiobutton" id="505">
 							<description>Show Datum</description>
@@ -200,7 +200,7 @@
 							<selected>Skin.HasSetting(show_RXTX)</selected>
 							<texturefocus>MenuItemFO.png</texturefocus>
 							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<visible>Skin.HasSetting(InfoboxOn) + System.HasAddon(service.netspeed.monitor)</visible>
+							<visible>Skin.HasSetting(InfoboxOn) + System.AddonIsEnabled(service.netspeed.monitor)</visible>
 						</control>
 						<control type="radiobutton" id="508">
 							<description>Show CPU Temp</description>
@@ -245,7 +245,7 @@
 							<selected>Skin.HasSetting(show_net)</selected>
 							<texturefocus>MenuItemFO.png</texturefocus>
 							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<visible>Skin.HasSetting(InfoboxOn) + System.HasAddon(service.ping.monitor)</visible>
+							<visible>Skin.HasSetting(InfoboxOn) + System.AddonIsEnabled(service.ping.monitor)</visible>
 						</control>
 						<control type="radiobutton" id="511">
 							<description>server</description>
@@ -260,7 +260,7 @@
 							<selected>Skin.HasSetting(show_nas)</selected>
 							<texturefocus>MenuItemFO.png</texturefocus>
 							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<visible>Skin.HasSetting(InfoboxOn) + System.HasAddon(service.ping.monitor)</visible>
+							<visible>Skin.HasSetting(InfoboxOn) + System.AddonIsEnabled(service.ping.monitor)</visible>
 						</control>
 						<control type="image">
 							<description>separator image</description>
@@ -300,7 +300,7 @@
 						<onright>62</onright>
 						<onup>9006</onup>
 						<ondown>9006</ondown>
-						<visible>!Skin.HasSetting(HomeMenuNoSCCButton) + System.HasAddon(plugin.video.stream-cinema-2-release)</visible>
+						<visible>!Skin.HasSetting(HomeMenuNoSCCButton) + System.AddonIsEnabled(plugin.video.stream-cinema-2-release)</visible>
 						<control type="label" id="600">
 							<width>750</width>
 							<height>45</height>

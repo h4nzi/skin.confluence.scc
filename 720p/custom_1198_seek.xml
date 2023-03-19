@@ -41,7 +41,6 @@
 			<ondown>9000</ondown>
 			<itemgap>0</itemgap>
 			<align>center</align>
-			<visible>VideoPlayer.IsFullscreen</visible>
 			<control type="group" id="1">
 				<width>340</width>
 				<height>70</height>
@@ -69,6 +68,7 @@
 				<pulseonselect>no</pulseonselect>
 				<font>font13</font>
 				<label>1 minuta</label>
+				<visible>VideoPlayer.IsFullscreen</visible>
 			</control>
 			<control type="button" id="3">
 				<description>skip</description>
@@ -84,6 +84,7 @@
 				<pulseonselect>no</pulseonselect>
 				<font>font13</font>
 				<label>Nova</label>
+				<visible>VideoPlayer.IsFullscreen</visible>
 			</control>
 			<control type="button" id="4">
 				<description>skip</description>
@@ -99,6 +100,7 @@
 				<pulseonselect>no</pulseonselect>
 				<font>font13</font>
 				<label>Prima</label>
+				<visible>VideoPlayer.IsFullscreen</visible>
 			</control>
 			<control type="button" id="5">
 				<description>skip</description>
@@ -114,6 +116,7 @@
 				<pulseonselect>no</pulseonselect>
 				<font>font13</font>
 				<label>Paramount Network</label>
+				<visible>VideoPlayer.IsFullscreen</visible>
 			</control>
 			<control type="button" id="6">
 				<description>skip</description>
@@ -129,6 +132,7 @@
 				<pulseonselect>no</pulseonselect>
 				<font>font13</font>
 				<label>National Geographic</label>
+				<visible>VideoPlayer.IsFullscreen</visible>
 			</control>
 			<control type="button" id="7">
 				<description>skip</description>
@@ -144,6 +148,7 @@
 				<pulseonselect>no</pulseonselect>
 				<font>font13</font>
 				<label>CS Film</label>
+				<visible>VideoPlayer.IsFullscreen</visible>
 			</control>
 			<control type="image" id="14">
 				<description>background bottom image</description>

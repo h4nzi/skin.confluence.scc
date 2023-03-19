@@ -25,7 +25,7 @@
 			<include>ButtonHomeSubCommonValues</include>
 			<label>Historie sledování</label>
 			<onclick>RunAddon(script.vip)</onclick>
-			<onclick>ActivateWindow(10025,plugin://plugin.video.stream-cinema-2-release/watched/,return)</onclick>
+			<onclick>ActivateWindow(10025,plugin://plugin.video.stream-cinema-2-release/watched/,return)</onclick> <!-- historie sledování -->
 			<visible>Skin.HasSetting(HistoryOn)</visible>
 		</control>
 		<control type="button" id="90559">
@@ -74,7 +74,7 @@
 			<include>ButtonHomeSubCommonValues</include>
 			<label>Nastavení</label>
 			<onclick>PlayMedia("plugin://plugin.video.stream-cinema-2-release/command/?command=open-settings",return)</onclick>
-			<visible>!System.IsMaster + Skin.HasSetting(SettingsOn)</visible>
+			<visible>!System.IsMaster + Skin.HasSetting(SettingsOn)</visible> <!-- ??? -->
 		</control>
 		
 		<control type="image" id="90566">
@@ -123,7 +123,7 @@
 			<include>ButtonHomeSubCommonValues</include>
 			<label>Seznamy trendů</label>
 			<onclick>PlayMedia(&quot;plugin://plugin.video.stream-cinema-2-release/command/?command=open-settings&quot;,return)</onclick>
-			<visible>!System.IsMaster + Skin.HasSetting(SettingsOn)</visible>
+			<visible>!System.IsMaster + Skin.HasSetting(SettingsOn)</visible> <!-- ??? -->
 		</control>
 		<control type="image" id="90607">
 			<width>35</width>
