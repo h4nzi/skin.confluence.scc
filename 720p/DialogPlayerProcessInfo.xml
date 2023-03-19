@@ -1,3 +1,4 @@
+<!-- orig.soubor doplněn o AMLogic info a změna rozmístění -->
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
 	<defaultcontrol always="true">100</defaultcontrol>
@@ -149,7 +150,7 @@
 			</control>
 			
 			
-			<!-- AMLogic Video Info -->
+			<!-- mod AMLogic Video Info -->
 			<control type="label">
 				<description>Header</description>
 				<left>50</left>
@@ -161,7 +162,7 @@
 				<aligny>center</aligny>
 				<font>font13_title</font>
 				<textcolor>blue</textcolor>
-				<visible>System.HasAddon(service.coreelec.settings)</visible>
+				<visible>System.AddonIsEnabled(service.coreelec.settings)</visible>
 			</control>
 			<control type="label">
 				<description>Display mode</description>
@@ -174,7 +175,7 @@
 				<aligny>center</aligny>
 				<font>font12</font>
 				<textcolor>grey2</textcolor>
-				<visible>System.HasAddon(service.coreelec.settings)</visible>
+				<visible>System.AddonIsEnabled(service.coreelec.settings)</visible>
 			</control>
 			<control type="label">
 				<description>Display mode value</description>
@@ -188,7 +189,7 @@
 				<aligny>center</aligny>
 				<font>font12</font>
 				<textcolor>white</textcolor>
-				<visible>System.HasAddon(service.coreelec.settings)</visible>
+				<visible>System.AddonIsEnabled(service.coreelec.settings)</visible>
 			</control>
 			<control type="label">
 				<description>Colour depth</description>
@@ -201,7 +202,7 @@
 				<aligny>center</aligny>
 				<font>font12</font>
 				<textcolor>grey2</textcolor>
-				<visible>System.HasAddon(service.coreelec.settings)</visible>
+				<visible>System.AddonIsEnabled(service.coreelec.settings)</visible>
 			</control>
 			<control type="label">
 				<description>Colour depth value</description>
@@ -215,7 +216,7 @@
 				<aligny>center</aligny>
 				<font>font12</font>
 				<textcolor>white</textcolor>
-				<visible>System.HasAddon(service.coreelec.settings)</visible>
+				<visible>System.AddonIsEnabled(service.coreelec.settings)</visible>
 			</control>
 			<control type="label">
 				<description>eotf</description>
@@ -228,7 +229,7 @@
 				<aligny>center</aligny>
 				<font>font12</font>
 				<textcolor>grey2</textcolor>
-				<visible>System.HasAddon(service.coreelec.settings)</visible>
+				<visible>System.AddonIsEnabled(service.coreelec.settings)</visible>
 			</control>
 			<control type="label">
 				<description>eotf value</description>
@@ -242,7 +243,7 @@
 				<aligny>center</aligny>
 				<font>font12</font>
 				<textcolor>white</textcolor>
-				<visible>System.HasAddon(service.coreelec.settings)</visible>
+				<visible>System.AddonIsEnabled(service.coreelec.settings)</visible>
 			</control>
 			<control type="label">
 				<description>Header</description>
@@ -383,7 +384,7 @@
 				<top>90</top>
 				<width>165</width>
 				<height>25</height>
-				<label>$LOCALIZE[13284]</label>
+				<label>$LOCALIZE[13284]</label> <!--Zařízení -->
 				<align>left</align>
 				<aligny>center</aligny>
 				<font>font12</font>
@@ -405,7 +406,7 @@
 			<control type="label">
 				<description>Memory</description>
 				<left>50</left>
-				<top>115</top>
+				<top>115</top>#360
 				<width>165</width>
 				<height>25</height>
 				<label>$LOCALIZE[31014]:</label>
@@ -441,7 +442,7 @@
 				<top>150</top>
 				<width>165</width>
 				<height>25</height>
-				<label>Videocache:</label>
+				<label>Buffering:</label>
 				<align>left</align>
 				<aligny>center</aligny>
 				<font>font12</font>
@@ -514,7 +515,7 @@
 				<aligny>center</aligny>
 				<font>font12</font>
 				<textcolor>grey2</textcolor>
-				<visible>System.HasAddon(service.netspeed.monitor)</visible>
+				<visible>System.AddonIsEnabled(service.netspeed.monitor)</visible>
 			</control>
 			<control type="label">
 				<left>220</left>
@@ -527,7 +528,7 @@
 				<textcolor>white</textcolor>
 				<shadowcolor>black</shadowcolor>
 				<label>$INFO[Window(Home).Property(RX)] Mbps</label>
-				<visible>System.HasAddon(service.netspeed.monitor)</visible>
+				<visible>System.AddonIsEnabled(service.netspeed.monitor)</visible>
 			</control>
 		</control>
 		
@@ -857,7 +858,8 @@
 				<aligny>center</aligny>
 				<font>font13_title</font>
 				<textcolor>blue</textcolor>
-			</control>		
+			</control>
+			
 			<control type="label">
 				<description>STRM value</description>
 				<left>50</left>
