@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 
-	<include file="Mod_Includes.xml" />
+	<include file="Mod_Includes.xml" /><!-- mod -->
 	
 	<include file="Defaults.xml" />
 	<include file="Includes_DialogSelect.xml" />
