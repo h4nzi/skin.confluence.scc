@@ -24,8 +24,8 @@
 		</item>
 	</include>
 	
-	<!-- GENERAL -->
-	<include name="Rating">
+	<!-- General -->
+	<include name="General">
 		<control type="radiobutton" id="2002">
 						<description>Show Advanced Settings</description>
 						<width>750</width>
@@ -36,6 +36,19 @@
 						<label>Zobrazit hodnocení</label>
 						<onclick>Skin.ToggleSetting(RatingOn)</onclick>
 						<selected>Skin.HasSetting(RatingOn)</selected>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+					</control>
+		<control type="radiobutton" id="2003">
+						<description>Splash</description>
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<label>Zakázat uvítací logo</label>
+						<onclick>Skin.ToggleSetting(SplashOn)</onclick>
+						<selected>!Skin.HasSetting(SplashOn)</selected>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 					</control>
