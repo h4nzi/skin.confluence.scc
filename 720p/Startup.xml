@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
-	<onload>AlarmClock(Skin,ReplaceWindow($INFO[System.StartupWindow]),00:10,silent)</onload>
+	<onload condition="!Skin.HasSetting(SplashOn)">ReplaceWindow($INFO[System.StartupWindow])</onload>
+	<onload condition="Skin.HasSetting(SplashOn)">AlarmClock(Skin,ReplaceWindow($INFO[System.StartupWindow]),00:10,silent)</onload>
 	<controls>
 		<control type="image">
 			<centerleft>50%</centerleft>
@@ -8,7 +9,7 @@
 			<width>100%</width>
 			<height>100%</height>
 			<aspectratio>keep</aspectratio>
-			<texture>startup/matrix.jpg</texture>
+			<texture>startup/nexus.jpg</texture>
 			<animation effect="rotate" center="auto" time="6000" start="0" end="360" loop="false" condition="true" >Conditional</animation>
 		</control>
 		<control type="image">
