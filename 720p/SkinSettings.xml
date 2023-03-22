@@ -284,7 +284,7 @@
 						<onclick>Skin.SelectBool(31962, 31963|show_profilename, 31964|show_profileavatar, 16018|show_none)</onclick>
 						<label2>$VAR[ProfileIdentificationLabel2Var]</label2>
 					</control>
-					<include>Rating</include>
+					<include>General</include>
 				</control>
 				<control type="scrollbar" id="60">
 					<left>1060</left>
