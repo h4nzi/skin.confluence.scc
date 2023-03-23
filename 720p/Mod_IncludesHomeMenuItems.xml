@@ -138,4 +138,20 @@
 			<onclick>ActivateWindow(skinsettings)</onclick>
 		</control>
 	</include>
+	<include name="HomeAddonItemsVideosEnhanced"><!-- IncludesHomeMenuItems.xml -->
+		<item>
+			<label>$INFO[system.addontitle(Skin.String(HomeVideosButton6))]</label>
+			<onclick>RunAddon($INFO[Skin.String(HomeVideosButton6)])</onclick>
+			<icon>$INFO[system.addonicon(Skin.String(HomeVideosButton6))]</icon>
+			<thumb/>
+			<visible>!String.IsEmpty(Skin.String(HomeVideosButton6))</visible>
+		</item>
+		<item>
+			<label>$INFO[system.addontitle(Skin.String(HomeVideosButton7))]</label>
+			<onclick>RunAddon($INFO[Skin.String(HomeVideosButton7)])</onclick>
+			<icon>$INFO[system.addonicon(Skin.String(HomeVideosButton7))]</icon>
+			<thumb/>
+			<visible>!String.IsEmpty(Skin.String(HomeVideosButton7))</visible>
+		</item>
+	</include>
 </includes>

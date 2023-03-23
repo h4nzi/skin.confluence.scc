@@ -47,8 +47,8 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<label>Zakázat uvítací logo</label>
-						<onclick>Skin.ToggleSetting(SplashOn)</onclick>
-						<selected>!Skin.HasSetting(SplashOn)</selected>
+						<onclick>Skin.ToggleSetting(HomeMenuNoSplash)</onclick>
+						<selected>Skin.HasSetting(HomeMenuNoSplash)</selected>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 					</control>
@@ -107,6 +107,19 @@
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<visible>System.AddonIsEnabled(script.emuelec.amlogic-ng.launcher)</visible>
 					</control>
+					<control type="radiobutton" id="2004">
+						<description>Hide favourites</description>
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<label>$LOCALIZE[31111] - Oblíbené</label>
+						<onclick>Skin.ToggleSetting(HomeMenuNoFavouritesButton)</onclick>
+						<selected>Skin.HasSetting(HomeMenuNoFavouritesButton)</selected>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+					</control>
 	</include>
 
 <!-- ADVACED SETTINGS -->
@@ -124,8 +137,6 @@
 						<onright>62</onright>
 						<onup>9005</onup>
 						<ondown>9005</ondown>
-						
-	<!-- ROZŠÍŘENÁ NASTAVENÍ DOMOVSKÉ OBRAZOVKY -->
 						<control type="label" id="500">
 							<width>750</width>
 							<height>45</height>
@@ -586,6 +597,33 @@
 					<orientation>vertical</orientation>
 					<visible>Container(9000).Hasfocus(8)</visible>
 				</control>
+	</include>
+	
+	<include name="HomeVideosButton">
+				<control type="button" id="416">
+							<width>750</width>
+							<height>40</height>
+							<font>font13</font>
+							<label>$LOCALIZE[24000] [B]6[/B]</label>
+							<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(HomeVideosButton6))][/COLOR]</label2>
+							<textcolor>grey2</textcolor>
+							<focusedcolor>white</focusedcolor>
+							<texturefocus>MenuItemFO.png</texturefocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
+							<onclick>Skin.SetAddon(HomeVideosButton6,xbmc.addon.video)</onclick>
+						</control>
+				<control type="button" id="417">
+							<width>750</width>
+							<height>40</height>
+							<font>font13</font>
+							<label>$LOCALIZE[24000] [B]7[/B]</label>
+							<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(HomeVideosButton7))][/COLOR]</label2>
+							<textcolor>grey2</textcolor>
+							<focusedcolor>white</focusedcolor>
+							<texturefocus>MenuItemFO.png</texturefocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
+							<onclick>Skin.SetAddon(HomeVideosButton7,xbmc.addon.video)</onclick>
+						</control>
 	</include>
 
 <!-- SKIN SETTINGS Konec -->
