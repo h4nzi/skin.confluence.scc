@@ -117,6 +117,7 @@
 			</control>
 		</control>
 	</include>
+	
 		
 	<!-- VARIABLES -->
 		<variable name="SkinSettingOSDAutoCloseTime"> <!-- mod OSD -->
