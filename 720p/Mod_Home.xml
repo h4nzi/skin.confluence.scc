@@ -9,6 +9,13 @@
 			<thumb/>
 			<visible>PVR.HasTVChannels + System.HasAddon(pvr.sledovanitv.cz)</visible>
 		</item>
+		<item id="17">
+			<label>OBLÍBENÉ</label><!-- mod oblíbené) -->
+			<onclick>ActivateWindow(Favourites)</onclick>
+			<icon/>
+			<thumb/>
+			<visible>!Skin.HasSetting(HomeMenuNoFavouritesButton)</visible>
+		</item>
 		<item id="15">
 			<label>S C C</label>
 			<onclick>RunAddon(plugin.video.stream-cinema-2-release)</onclick>
@@ -51,5 +58,13 @@
 			<!--Buttons for the grouplist -->
 			<include>HomeSubMenuSCC</include>
 		</control>
+		<!-- <control type="grouplist" id="9020"> -->
+			<!-- <include>HomeSubMenuCommonValues</include> -->
+			<!-- <onleft>9017</onleft> -->
+			<!-- <onright>9017</onright> -->
+			<!-- <visible>Container(9000).HasFocus(17)</visible> -->
+			<!-- Buttons for the grouplist -->
+			<!-- <include>HomeSubMenuSCC</include> -->
+		<!-- </control> -->
 	</include>
 </includes>

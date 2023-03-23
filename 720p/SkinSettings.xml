@@ -1020,6 +1020,7 @@
 							<texturenofocus>MenuItemNF.png</texturenofocus>
 							<onclick>Skin.SetAddon(HomeVideosButton5,xbmc.addon.video)</onclick>
 						</control>
+						<include>HomeVideosButton</include><!-- Mod_SkinSettings.xml -->
 						<control type="label" id="420">
 							<width>750</width>
 							<height>45</height>
