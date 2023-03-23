@@ -432,6 +432,7 @@
 			<thumb/>
 			<visible>!String.IsEmpty(Skin.String(HomeVideosButton5))</visible>
 		</item>
+		<include>HomeAddonItemsVideosEnhanced</include><!-- Mod_IncludesHomeMenuItems.xml -->
 	</include>
 	<include name="HomeAddonItemsMusic">
 		<item>
