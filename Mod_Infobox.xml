@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+<!-- INFOBOX -->
+	<include name="HWInfobar">
+		<control type="grouplist">
+			<description>HW Info Bar</description>
+			<visible>Skin.HasSetting(InfoboxOn)</visible>
+			<right>10</right>
+			<top>5</top>
+			<width>1000</width>
+			<height>25</height>
+			<align>right</align>
+			<itemgap>10</itemgap>
+			<orientation>horizontal</orientation>
+			<usecontrolcoords>true</usecontrolcoords>
+				<control type="label">
+					<width>auto</width>
+					<fadetime>300</fadetime>
+					<aligny>center</aligny>
+					<font>font12</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
+					<label>$INFO[Window(Home).Property(vip_days),VIP: ]</label>
+					<visible>true</visible>
+				</control>
+				<control type="label">
+					<width>auto</width>
+					<fadetime>300</fadetime>
+					<aligny>center</aligny>
+					<font>font12</font>
+					<textcolor>white</textcolor>
+					<label>RX/TX: [COLOR lime]$INFO[Window(Home).Property(RX)][/COLOR] / [COLOR yellow]$INFO[Window(Home).Property(TX)][/COLOR] Mbps</label>
+					<visible>Skin.HasSetting(show_RXTX) + System.AddonIsEnabled(service.netspeed.monitor)</visible>
+				</control>
+				<control type="label">
+					<description>CPU info</description>
+					<width>auto</width>
+					<fadetime>300</fadetime>
+					<aligny>center</aligny>
+					<font>font12</font>
+					<textcolor>white</textcolor> - 
+					<label>CPU: $INFO[System.CoreUsage(0)]%/$INFO[System.CPUTemperature]/$INFO[System.CpuFrequency]</label>
+					<visible>Skin.HasSetting(show_CPUTemp) + System.CpuUsage + System.Platform.Linux</visible>
+				</control>
+				<control type="label">
+					<description>CPU info</description>
+					<width>auto</width>
+					<fadetime>300</fadetime>
+					<aligny>center</aligny>
+					<font>font12</font>
+					<textcolor>white</textcolor> - 
+					<label>CPU: $INFO[System.CoreUsage(0)]%/$INFO[System.CpuFrequency]</label>
+					<visible>Skin.HasSetting(show_CPUTemp) + System.CpuUsage + System.Platform.Windows</visible>
+				</control>
+				<control type="group">
+					<description>memory info</description>
+					<left>-10</left>
+					<top>3</top>
+					<width>140</width>
+					<height>15</height>
+					<visible>Skin.HasSetting(show_MEM)</visible>
+					<control type="label">
+						<right>30</right>
+						<top>5</top>
+						<aligny>center</aligny>
+						<width>100</width>
+						<fadetime>300</fadetime>
+						<label>MEM: $INFO[system.memory(used.percent)]</label>
+						<font>font12</font>
+						<textcolor>white</textcolor>
+						<shadowcolor>black</shadowcolor>
+						<visible>!System.Platform.Android</visible>
+					</control>
+					<control type="label">
+						<right>30</right>
+						<top>5</top>
+						<aligny>center</aligny>
+						<width>120</width>
+						<fadetime>300</fadetime>
+						<label>MEM: $INFO[system.memory(used)]</label>
+						<font>font12</font>
+						<textcolor>white</textcolor>
+						<shadowcolor>black</shadowcolor>
+						<visible>System.Platform.Android</visible>
+					</control>
+					<control type="progress">
+						<right>0</right>
+						<top>5</top>
+						<width>40</width>
+						<height>10</height>
+						<texturebg>textures/border.png</texturebg>
+						<info>System.Memory(used)</info>
+						<visible>!System.Platform.Android</visible>
+					</control>
+				</control>
+				<control type="image">
+					<description>Internet</description>
+					<width>25</width>
+					<aligny>center</aligny>
+					<fadetime>300</fadetime>
+					<aspectratio aligny="center" align="center">keep</aspectratio>
+					<texture>status/internet.png</texture>
+					<visible>String.IsEqual(Window(Home).Property(inet), 0) + Skin.HasSetting(show_net) + System.AddonIsEnabled(service.ping.monitor)</visible>
+				</control>
+				<control type="image">
+					<description>Internet</description>
+					<width>25</width>
+					<fadetime>300</fadetime>
+					<colordiffuse>red</colordiffuse>
+					<aspectratio aligny="center" align="center">keep</aspectratio>
+					<texture>status/internet.png</texture>
+					<visible>!String.IsEqual(Window(Home).Property(inet), 0) + Skin.HasSetting(show_net) + System.AddonIsEnabled(service.ping.monitor)</visible>
+				</control>
+				<control type="image">
+					<description>Network</description>
+					<width>25</width>
+					<aligny>center</aligny>
+					<fadetime>300</fadetime>
+					<aspectratio aligny="center" align="center">keep</aspectratio>
+					<texture>status/network.png</texture>
+					<visible>String.IsEqual(Window(Home).Property(router), 0) + Skin.HasSetting(show_net) + System.AddonIsEnabled(service.ping.monitor)</visible>
+				</control>
+				<control type="image">
+					<description>Network</description>
+					<width>25</width>
+					<fadetime>300</fadetime>
+					<colordiffuse>red</colordiffuse>
+					<aspectratio aligny="center" align="center">keep</aspectratio>
+					<texture>status/network.png</texture>
+					<visible>!String.IsEqual(Window(Home).Property(router), 0) + Skin.HasSetting(show_net) + System.AddonIsEnabled(service.ping.monitor)</visible>
+				</control>
+				<control type="image">
+					<description>SCC</description>
+					<top>-5</top>
+					<width>35</width>
+					<height>35</height>
+					<aligny>center</aligny>
+					<fadetime>300</fadetime>
+					<aspectratio aligny="center" align="center">keep</aspectratio>
+					<texture>status/sc2.png</texture>
+					<visible>String.IsEqual(Window(Home).Property(scc), 0) + Skin.HasSetting(show_net) + System.AddonIsEnabled(service.ping.monitor)</visible>
+				</control>
+				<control type="image">
+					<description>SCC</description>
+					<top>-5</top>
+					<width>35</width>
+					<height>35</height>
+					<fadetime>300</fadetime>
+					<colordiffuse>red</colordiffuse>
+					<aspectratio aligny="center" align="center">keep</aspectratio>
+					<texture>status/sc2.png</texture>
+					<visible>!String.IsEqual(Window(Home).Property(scc), 0) + Skin.HasSetting(show_net) + System.AddonIsEnabled(service.ping.monitor)</visible>
+				</control>
+				<control type="image">
+					<description>AVR</description>
+					<width>30</width>
+					<aligny>center</aligny>
+					<fadetime>300</fadetime>
+					<aspectratio aligny="center" align="center">keep</aspectratio>
+					<texture>status/avr.png</texture>
+					<visible>String.IsEqual(Window(Home).Property(AVR), 0) + Skin.HasSetting(show_net) + System.AddonIsEnabled(service.ping.monitor)</visible>
+				</control>
+				<control type="image">
+					<description>AVR</description>
+					<width>25</width>
+					<fadetime>300</fadetime>
+					<colordiffuse>red</colordiffuse>
+					<aspectratio aligny="center" align="center">keep</aspectratio>
+					<texture>status/avr.png</texture>
+					<visible>!String.IsEqual(Window(Home).Property(AVR), 0) + Skin.HasSetting(show_net) + System.AddonIsEnabled(service.ping.monitor)</visible>
+				</control>
+				<control type="image">
+					<description>NAS</description>
+					<width>25</width>
+					<aligny>center</aligny>
+					<fadetime>300</fadetime>
+					<aspectratio aligny="center" align="center">keep</aspectratio>
+					<texture>status/nas.png</texture>
+					<visible>String.IsEqual(Window(Home).Property(NAS), 0) + Skin.HasSetting(show_nas) + System.AddonIsEnabled(service.ping.monitor)</visible>
+				</control>
+				<control type="image">
+					<description>NAS</description>
+					<width>25</width>
+					<fadetime>300</fadetime>
+					<colordiffuse>red</colordiffuse>
+					<aspectratio aligny="center" align="center">keep</aspectratio>
+					<texture>status/nas.png</texture>
+					<visible>!String.IsEqual(Window(Home).Property(NAS), 0) + Skin.HasSetting(show_nas) + System.AddonIsEnabled(service.ping.monitor)</visible>
+				</control>
+			</control>
+	</include>
+	<!-- INFOBOX Konec -->
+</includes>
