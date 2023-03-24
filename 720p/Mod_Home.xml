@@ -3,14 +3,14 @@
 <!-- HOMESCREEN MAIN MENU -->
 	<include name="HomeItem">
 		<item id="12">
-			<label>SledováníTV</label><!-- mod sledováníTV) -->
+			<label>SledováníTV</label>
 			<onclick>ActivateWindow(TVChannels)</onclick>
 			<icon/>
 			<thumb/>
 			<visible>PVR.HasTVChannels + System.HasAddon(pvr.sledovanitv.cz)</visible>
 		</item>
 		<item id="17">
-			<label>OBLÍBENÉ</label><!-- mod oblíbené) -->
+			<label>OBLÍBENÉ</label>
 			<onclick>ActivateWindow(Favourites)</onclick>
 			<icon/>
 			<thumb/>
@@ -33,7 +33,7 @@
 		<!-- </item> -->
 	</include>
 	<include name="HomeEmuelec">
-		<item id="9"><!-- mod-emuelec -->
+		<item id="9">
 			<label>EMUELEC</label>
 			<onclick>RunAddon(script.emuelec.amlogic-ng.launcher)</onclick>
 			<icon/>
@@ -58,13 +58,5 @@
 			<!--Buttons for the grouplist -->
 			<include>HomeSubMenuSCC</include>
 		</control>
-		<!-- <control type="grouplist" id="9020"> -->
-			<!-- <include>HomeSubMenuCommonValues</include> -->
-			<!-- <onleft>9017</onleft> -->
-			<!-- <onright>9017</onright> -->
-			<!-- <visible>Container(9000).HasFocus(17)</visible> -->
-			<!-- Buttons for the grouplist -->
-			<!-- <include>HomeSubMenuSCC</include> -->
-		<!-- </control> -->
 	</include>
 </includes>
