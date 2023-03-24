@@ -106,20 +106,6 @@
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 					</control>
-					<control type="radiobutton" id="2003">
-						<description>Show EmuELEC</description>
-						<width>750</width>
-						<height>40</height>
-						<font>font13</font>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<label>Zobrazit EmuELEC</label>
-						<onclick>Skin.ToggleSetting(EmuElecOn)</onclick>
-						<selected>Skin.HasSetting(EmuElecOn)</selected>
-						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<visible>System.AddonIsEnabled(script.emuelec.amlogic-ng.launcher)</visible>
-					</control>
 	</include>
 
 <!-- ADVACED SETTINGS -->
