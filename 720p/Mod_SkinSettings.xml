@@ -80,6 +80,19 @@
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<visible>System.AddonIsEnabled(plugin.video.stream-cinema-2-release)</visible>
 					</control>
+		<control type="radiobutton" id="2004">
+						<description>Hide favourites</description>
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<label>$LOCALIZE[31111] - Oblíbené</label>
+						<onclick>Skin.ToggleSetting(HomeMenuNoFavouritesButton)</onclick>
+						<selected>Skin.HasSetting(HomeMenuNoFavouritesButton)</selected>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+					</control>
 					<control type="radiobutton" id="2002">
 						<description>Show Advanced Settings</description>
 						<width>750</width>
@@ -106,19 +119,6 @@
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<visible>System.AddonIsEnabled(script.emuelec.amlogic-ng.launcher)</visible>
-					</control>
-					<control type="radiobutton" id="2004">
-						<description>Hide favourites</description>
-						<width>750</width>
-						<height>40</height>
-						<font>font13</font>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<label>$LOCALIZE[31111] - Oblíbené</label>
-						<onclick>Skin.ToggleSetting(HomeMenuNoFavouritesButton)</onclick>
-						<selected>Skin.HasSetting(HomeMenuNoFavouritesButton)</selected>
-						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>MenuItemNF.png</texturenofocus>
 					</control>
 	</include>
 
