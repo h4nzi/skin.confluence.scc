@@ -1,3 +1,6 @@
+[B]4.7.15.nexus-6[/B]
+- změněno umístění vyhledávání (lupa), přidány položky Hledání v SCC, WS a YT
+
 [B]4.7.15.nexus-5[/B]
 - změna značení skinu
 - přidáno zobrazení VIP dní Webshare
