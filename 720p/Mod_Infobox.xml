@@ -29,6 +29,7 @@
 					<aligny>center</aligny>
 					<font>font12</font>
 					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
 					<label>RX/TX: [COLOR lime]$INFO[Window(Home).Property(RX)][/COLOR] / [COLOR yellow]$INFO[Window(Home).Property(TX)][/COLOR] Mbps</label>
 					<visible>Skin.HasSetting(show_RXTX) + System.AddonIsEnabled(service.netspeed.monitor)</visible>
 				</control>
@@ -38,7 +39,8 @@
 					<fadetime>300</fadetime>
 					<aligny>center</aligny>
 					<font>font12</font>
-					<textcolor>white</textcolor> - 
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
 					<label>CPU: $INFO[System.CoreUsage(0)]%/$INFO[System.CPUTemperature]/$INFO[System.CpuFrequency]</label>
 					<visible>Skin.HasSetting(show_CPUTemp) + System.CpuUsage + System.Platform.Linux</visible>
 				</control>
@@ -48,7 +50,8 @@
 					<fadetime>300</fadetime>
 					<aligny>center</aligny>
 					<font>font12</font>
-					<textcolor>white</textcolor> - 
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
 					<label>CPU: $INFO[System.CoreUsage(0)]%/$INFO[System.CpuFrequency]</label>
 					<visible>Skin.HasSetting(show_CPUTemp) + System.CpuUsage + System.Platform.Windows</visible>
 				</control>
