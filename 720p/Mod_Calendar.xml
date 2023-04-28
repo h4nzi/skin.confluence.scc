@@ -1,9 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <includes>
+		<include name="Mod_Clock">
+				<control type="label">
+					<description>time label</description>
+					<right>5</right>
+					<top>5</top>
+					<width>200</width>
+					<height>30</height>
+					<align>right</align>
+					<aligny>center</aligny>
+					<font>font40</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
+					<label>$INFO[System.Time(hh)]$INFO[Window(Home).Property(Pulsy)]$INFO[System.Time(mm)]</label>
+					<animation effect="slide" start="0,0" end="-40,0" time="75" condition="Player.Muted">conditional</animation>
+					<animation effect="slide" start="0,0" end="0,30" time="75" condition="Skin.HasSetting(InfoboxOn)">conditional</animation>
+				</control>
+                <control type="group">
+                    <visible>Integer.IsGreater(System.ProfileCount,1)</visible>
+                    <control type="image">
+                            <visible>Skin.HasSetting(show_profileavatar)</visible>
+                            <top>5</top>
+                            <left>1105</left>
+                            <width>30</width>
+                            <height>30</height>
+                            <animation effect="slide" start="0,0" end="-40,0" time="75" condition="Player.Muted">conditional</animation>
+                            <texture>$INFO[System.ProfileThumb]</texture>
+                            <aspectratio>scale</aspectratio>
+                    </control>
+                    <control type="label">
+                            <visible>Skin.HasSetting(show_profilename)</visible>
+                            <font>font28_title</font>
+                            <align>right</align>
+                            <top>5</top>
+                            <left>540</left>
+                            <textcolor>white</textcolor>
+                            <shadowcolor>black</shadowcolor>
+                            <aligny>center</aligny>
+                            <height>30</height>
+                            <width max="600">auto</width>
+                            <animation effect="slide" start="0,0" end="-40,0" time="75" condition="Player.Muted">conditional</animation>
+                            <label>$INFO[System.ProfileName]</label>
+                    </control>
+        </control>
+	</include>
 	<include name="Calendar">
 		<control type="group">
-			<description>Day and Date</description>
+			<description>Holidays</description>
 			<right>5</right>
 			<top>30</top>
 			<width>20</width>
@@ -54,7 +98,7 @@
 					<font>font12</font>
 					<textcolor>white</textcolor>
 					<shadowcolor>black</shadowcolor>
-					<label>$INFO[System.Date(d MMM)]</label>
+					<label>$INFO[System.Date(d. MMM)]</label>
 					<include>Window_OpenClose_Animation</include>
 					<animation effect="slide" start="0,0" end="-40,0" time="75" condition="Player.Muted">conditional</animation>
 				</control>
@@ -83,8 +127,8 @@
 					<!-- <visible>Skin.HasSetting(homepageWeatherinfo) + !String.IsEmpty(Weather.Plugin) + String.IsEmpty(Window(Home).Property(Birthday))</visible> -->
 					<visible>Skin.HasSetting(homepageWeatherinfo) + !String.IsEmpty(Weather.Plugin)</visible>
 					<animation effect="slide" start="0,0" end="0,30" time="75" condition="Skin.HasSetting(InfoboxOn)">conditional</animation>
-					<animation effect="slide" start="0,0" end="0,40" time="75" condition="Skin.HasSetting(HolidaysOn) + System.AddonIsEnabled(service.holiday.vanio)">conditional</animation>
-					<animation effect="slide" start="0,0" end="0,30" time="75" condition="!String.IsEmpty(Window(Home).Property(Birthday))">conditional</animation>
+					<animation effect="slide" start="0,0" end="0,25" time="75" condition="Skin.HasSetting(HolidaysOn) + System.AddonIsEnabled(service.holiday.vanio)">conditional</animation>
+					<animation effect="slide" start="0,0" end="0,20" time="75" condition="!String.IsEmpty(Window(Home).Property(Birthday))">conditional</animation>
 					<control type="label">
 						<description>Temp label</description>
 						<top>20</top>
