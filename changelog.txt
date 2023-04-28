@@ -1,3 +1,23 @@
+[B]4.7.15.nexus-5[/B]
+- změna značení skinu
+- přidáno zobrazení VIP dní Webshare
+- přidána dynamická dvojtečka hodin na hlavní obrazovce
+
+[B]4.7.15.4[/B]
+- drobné úpravy
+
+[B]4.7.15.2[/B]
+- optimalizace
+
+[B]4.7.15.2[/B]
+- přidáno přeskakování reklam a návod k použití
+
+[B]4.7.15.1[/B]
+- změna pozadí
+- změna umístění hodin a počasí
+- přidání informační lišty (Infobox)
+- rozšířené nastavení
+
 [B]4.7.15[/B]
 
 - Fix image in select dialog
