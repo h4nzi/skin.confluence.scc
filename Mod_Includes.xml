@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+		<include file="Mod_Home.xml"/>
+		<include file="Mod_IncludesHomeMenuItems.xml" />
+		<!-- <include file="Mod_DialogPlayerProcessInfo.xml"/> -->
+		<include file="Mod_SkinSettings.xml" />
+		<include file="Mod_ViewsPVRGuide.xml" />
+		<include file="Mod_Infobox.xml" />
+		<include file="Mod_Calendar.xml" />
+		
+	<include name="Mod_Clock">
+				<control type="label">
+					<description>time label</description>
+					<right>5</right>
+					<top>5</top>
+					<width>200</width>
+					<height>30</height>
+					<align>right</align>
+					<aligny>center</aligny>
+					<font>font40</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
+					<label>$INFO[System.Time(hh)]$INFO[Window(Home).Property(Pulsy)]$INFO[System.Time(mm)]</label>
+					<animation effect="slide" start="0,0" end="-40,0" time="75" condition="Player.Muted">conditional</animation>
+					<animation effect="slide" start="0,0" end="0,30" time="75" condition="Skin.HasSetting(InfoboxOn)">conditional</animation>
+				</control>
+                <control type="group">
+                        <visible>Integer.IsGreater(System.ProfileCount,1)</visible>
+                        <control type="image">
+                                <visible>Skin.HasSetting(show_profileavatar)</visible>
+                                <top>5</top>
+                                <left>1105</left>
+                                <width>30</width>
+                                <height>30</height>
+                                <animation effect="slide" start="0,0" end="-40,0" time="75" condition="Player.Muted">conditional</animation>
+                                <texture>$INFO[System.ProfileThumb]</texture>
+                                <aspectratio>scale</aspectratio>
+                        </control>
+                        <control type="label">
+                                <visible>Skin.HasSetting(show_profilename)</visible>
+                                <font>font28_title</font>
+                                <align>right</align>
+                                <top>5</top>
+                                <left>540</left>
+                                <textcolor>white</textcolor>
+                                <shadowcolor>black</shadowcolor>
+                                <aligny>center</aligny>
+                                <height>30</height>
+                                <width max="600">auto</width>
+                                <animation effect="slide" start="0,0" end="-40,0" time="75" condition="Player.Muted">conditional</animation>
+                                <label>$INFO[System.ProfileName]</label>
+                        </control>
+                </control>
+	</include>
+	<include name="VideoRating">
+		<control type="group">
+			<left>155</left>
+			<top>0</top>
+			<width>50</width>
+			<align>center</align>
+			<visible>!String.IsEmpty(ListItem.Label2) + Skin.HasSetting(RatingOn)</visible>
+			<control type="image"><!-- mod -->
+				<left>3</left>
+				<top>-5</top>
+				<width>0</width>
+				<height>0</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<texture>ratings/badge.png</texture>
+				<aspectratio>keep</aspectratio>
+			</control>
+			<control type="label">
+				<left>0</left>
+				<top>5</top>
+				<height>25</height>
+				<font>font13</font>
+				<textcolor>white</textcolor>
+				<selectedcolor>selected</selectedcolor>
+				<align>center</align>
+				<aligny>center</aligny>
+				<label>$INFO[ListItem.Rating]</label>
+			</control>
+		</control>
+	</include>
+	
+		
+	<!-- VARIABLES -->
+		<variable name="SkinSettingOSDAutoCloseTime"> <!-- mod OSD -->
+			<value condition="!String.IsEmpty(Skin.String(OSDAutoCloseTime))">$INFO[Skin.String(OSDAutoCloseTime)]</value>
+			<value condition="String.IsEmpty(Skin.String(OSDAutoCloseTime))">4</value> <!-- Default value -->
+		</variable>
+		<variable name="RatingSettingLabel2Var">
+			<value condition="Skin.HasSetting(circle_rating)">$LOCALIZE[563]</value><!-- hodnocení -->
+			<value condition="Skin.HasSetting(circle_userrating)">$LOCALIZE[38018]</value><!-- moje hodnocení -->
+			<value>$LOCALIZE[16018]</value><!-- žádné -->
+		</variable>
+		<variable name="VideoHWDecoder">
+			<value condition="Player.Process(videohwdecoder)">Hardware Decoding</value>
+			<value>SW</value>
+		</variable>
+		
+	<expression name="epg_event_live">String.Contains(ListItem.Plot,Přímý přenos) | String.Contains(ListItem.Plot,Priamy prenos)</expression>
+</includes>
