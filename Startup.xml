@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<onload condition="Skin.HasSetting(HomeMenuNoSplash)">ReplaceWindow($INFO[System.StartupWindow])</onload>
+	<onload condition="!Skin.HasSetting(HomeMenuNoSplash)">AlarmClock(Skin,ReplaceWindow($INFO[System.StartupWindow]),00:10,silent)</onload>
+	<controls>
+		<control type="image">
+			<centerleft>50%</centerleft>
+			<centertop>50%</centertop>
+			<width>100%</width>
+			<height>100%</height>
+			<aspectratio>keep</aspectratio>
+			<texture>startup/nexus.jpg</texture>
+			<animation effect="rotate" center="auto" time="6000" start="0" end="360" loop="false" condition="true" >Conditional</animation>
+		</control>
+		<control type="image">
+			<centerleft>50%</centerleft>
+			<centertop>50%</centertop>
+			<width>100%</width>
+			<height>100%</height>
+			<aspectratio>keep</aspectratio>
+			<texture>startup/splash-r.png</texture>
+			<animation effect="rotate" center="auto" time="6000" start="360" end="0" loop="true" condition="true" >Conditional</animation>
+		</control>
+	</controls>
+</window>
