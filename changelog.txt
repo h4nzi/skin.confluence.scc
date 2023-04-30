@@ -1,10 +1,12 @@
 [B]4.7.15.nexus-6[/B]
 - změněno umístění vyhledávání (lupa), přidány položky Hledání v SCC, WS a YT
+- přidána informace o provedené kontrole VIP dní
+- oprava pohybu v submenu SCC
 
 [B]4.7.15.nexus-5[/B]
 - změna značení skinu
 - přidáno zobrazení VIP dní Webshare
-- přidána dynamická dvojtečka hodin na hlavní obrazovce
+- přidána animace hodin
 
 [B]4.7.15.4[/B]
 - drobné úpravy

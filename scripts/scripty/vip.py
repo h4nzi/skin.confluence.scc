@@ -3,11 +3,8 @@
 import os
 import subprocess
 import re
+import xbmcgui
 
-
-
-import subprocess
-import re
 
 # Najde a extrahuje hodnotu vip_check
 vip_check = subprocess.check_output(["grep", "last_vip_check", "/storage/.kodi/userdata/addon_data/plugin.video.stream-cinema-2-release/settings.xml"])
@@ -20,6 +17,7 @@ if vip_check:
 vip_duration = subprocess.check_output(["grep", "provider.vip_duration", "/storage/.kodi/userdata/addon_data/plugin.video.stream-cinema-2-release/settings.xml"])
 vip_duration = re.search(r'>\s*(.*?)\s*<', vip_duration.decode("utf-8"))
 if vip_duration:
+    xbmcgui.Dialog().notification('VIP Days Webshare', 'Kontrola zbývajícich dní předplatného', xbmcgui.NOTIFICATION_INFO, 2000, sound=True)
     vip_duration = vip_duration.group(1)
     vip_days = re.search(r'\(Dny: (\d+)\)', vip_duration).group(1)
     color = ""
