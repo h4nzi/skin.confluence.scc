@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+<!-- HOMESCREEN SUBMENU -->
+	<include name="HomeSubMenuSCC">
+		<control type="image" id="90555">
+			<width>35</width>
+			<height>35</height>
+			<texture border="0,0,0,3" flipx="true">HomeSubEnd.png</texture>
+		</control>
+		<control type="button" id="90556">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>Filmy</label>
+			<onclick>RunAddon(script.vip)</onclick>
+			<onclick>ActivateWindow(10025,plugin://plugin.video.stream-cinema-2-release/movies/,return)</onclick>
+			<visible>Skin.HasSetting(MoviesOn)</visible>
+		</control>
+		<control type="button" id="90557">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>Seriály</label>
+			<onclick>RunAddon(script.vip)</onclick>
+			<onclick>ActivateWindow(10025,plugin://plugin.video.stream-cinema-2-release/tv_shows/,return)</onclick>
+			<visible>Skin.HasSetting(TVShowsOn)</visible>
+		</control>
+		<control type="button" id="90558">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>Historie sledování</label>
+			<onclick>RunAddon(script.vip)</onclick>
+			<onclick>ActivateWindow(10025,plugin://plugin.video.stream-cinema-2-release/watched/,return)</onclick> <!-- historie sledování -->
+			<visible>Skin.HasSetting(HistoryOn)</visible>
+		</control>
+		<control type="button" id="90559">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>Pokračovat ve sledování</label>
+			<onclick>RunAddon(script.vip)</onclick>
+			<onclick>ActivateWindow(10025,plugin://plugin.video.stream-cinema-2-release/continue_watching,return)</onclick>
+			<visible>Skin.HasSetting(ContinueWatchingOn)</visible>
+		</control>
+		<control type="button" id="90560">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>Tématické seznamy</label>
+			<onclick>RunAddon(script.vip)</onclick>
+			<onclick>ActivateWindow(10025,plugin://plugin.video.stream-cinema-2-release/thematic_lists,return)</onclick>
+			<visible>Skin.HasSetting(ThemaListsOn)</visible>
+		</control>
+		<control type="button" id="90561">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>Trakt</label>
+			<onclick>RunAddon(script.vip)</onclick>
+			<onclick>ActivateWindow(10025,plugin://plugin.video.stream-cinema-2-release/trakt/lists?user=me,return)</onclick>
+			<visible>Skin.HasSetting(TraktOn)</visible>
+		</control>
+		<control type="button" id="90562">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>Anime</label>
+			<onclick>RunAddon(script.vip)</onclick>
+			<onclick>ActivateWindow(10025,plugin://plugin.video.stream-cinema-2-release/anime/,return)</onclick>
+			<visible>Skin.HasSetting(AnimeOn)</visible>
+		</control>
+		<control type="button" id="90563">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>Koncerty</label>
+			<onclick>RunAddon(script.vip)</onclick>
+			<onclick>ActivateWindow(10025,plugin://plugin.video.stream-cinema-2-release/concerts/,return)</onclick>
+			<visible>Skin.HasSetting(ConcertsOn)</visible>
+		</control>
+		<control type="button" id="90564">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>Stahování</label>
+			<onclick>RunAddon(script.vip)</onclick>
+			<onclick>ActivateWindow(10025,plugin://plugin.video.stream-cinema-2-release/download-queue/,return)</onclick>
+			<visible>Skin.HasSetting(DownOn)</visible>
+		</control>
+		<control type="button" id="90565">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>Nastavení</label>
+			<onclick>PlayMedia("plugin://plugin.video.stream-cinema-2-release/command/?command=open-settings",return)</onclick>
+			<visible>!System.IsMaster + Skin.HasSetting(SettingsOn)</visible> <!-- ??? -->
+		</control>
+		
+		<control type="image" id="90566">
+			<width>35</width>
+			<height>35</height>
+			<texture border="0,0,0,3">HomeSubEnd.png</texture>
+		</control>
+	</include>
+	<include name="HomeSubMenuTrakt">
+		<control type="image" id="90600">
+			<width>35</width>
+			<height>35</height>
+			<texture border="0,0,0,3" flipx="true">HomeSubEnd.png</texture>
+		</control>
+		<control type="button" id="90601">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>Ke zhlédnutí</label>
+			<onclick>ActivateWindow(10025,"plugin://plugin.video.stream-cinema-2-release/trakt/list?id=watchlist&amp;user=me/",return)</onclick>
+			<visible>!Skin.HasSetting(HomeMenuNoSCCButton) + Skin.HasSetting(WatchlistTraktOn)</visible>
+		</control>
+		<control type="button" id="90602">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>Mé seznamy</label>
+			<onclick>ActivateWindow(10025,"plugin://plugin.video.stream-cinema-2-release/trakt/list?id=me-seznamy&amp;user=me/",return)</onclick>
+			<visible>!Skin.HasSetting(HomeMenuNoSCCButton) + Skin.HasSetting(MeSeznamyTraktOn)</visible>
+		</control>
+		<control type="button" id="90603">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>Historie</label>
+			<onclick>ActivateWindow(10025,"plugin://plugin.video.stream-cinema-2-release/trakt/list?id=history&amp;user=me/",return)</onclick>
+			<visible>!Skin.HasSetting(HomeMenuNoSCCButton) + Skin.HasSetting(HistoryTraktOn)</visible>
+		</control>
+		<control type="button" id="90604">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>Nedokoukané</label>
+			<onclick>ActivateWindow(10025,"plugin://plugin.video.stream-cinema-2-release/trakt/list?id=p&amp;user=me/",return)</onclick>
+			<visible>!Skin.HasSetting(HomeMenuNoSCCButton) + Skin.HasSetting(ContinueWatchingTraktOn)</visible>
+		</control>
+		<control type="button" id="90605">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>Populární seznamy</label>
+			<onclick>ActivateWindow(Videos,plugin://plugin.video.stream-cinema-2-release/continue_watching/,return)</onclick>
+			<visible>Skin.HasSetting(ThemaListsOn)</visible>
+		</control>
+		<control type="button" id="90606">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>Seznamy trendů</label>
+			<onclick>PlayMedia(&quot;plugin://plugin.video.stream-cinema-2-release/command/?command=open-settings&quot;,return)</onclick>
+			<visible>!System.IsMaster + Skin.HasSetting(SettingsOn)</visible> <!-- ??? -->
+		</control>
+		<control type="image" id="90607">
+			<width>35</width>
+			<height>35</height>
+			<texture border="0,0,0,3">HomeSubEnd.png</texture>
+		</control>
+	</include>
+	<include name="ModHomeSubMenuSystem">
+		<control type="button" id="90999">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>Nastavení vzhledu</label>
+			<onclick>ActivateWindow(skinsettings)</onclick>
+		</control>
+	</include>
+	<include name="HomeAddonItemsVideosEnhanced">
+		<item>
+			<label>$INFO[system.addontitle(Skin.String(HomeVideosButton6))]</label>
+			<onclick>RunAddon($INFO[Skin.String(HomeVideosButton6)])</onclick>
+			<icon>$INFO[system.addonicon(Skin.String(HomeVideosButton6))]</icon>
+			<thumb/>
+			<visible>!String.IsEmpty(Skin.String(HomeVideosButton6))</visible>
+		</item>
+		<item>
+			<label>$INFO[system.addontitle(Skin.String(HomeVideosButton7))]</label>
+			<onclick>RunAddon($INFO[Skin.String(HomeVideosButton7)])</onclick>
+			<icon>$INFO[system.addonicon(Skin.String(HomeVideosButton7))]</icon>
+			<thumb/>
+			<visible>!String.IsEmpty(Skin.String(HomeVideosButton7))</visible>
+		</item>
+	</include>
+
+</includes>
