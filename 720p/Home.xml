@@ -521,13 +521,15 @@
 			<visible>String.IsEmpty(Window(Videos).Property(PlayingBackgroundMedia))</visible>
 			<control type="image">
 				<description>Background End image</description>
-				<left>145</left>
+				<left>30</left>
 				<top>0</top>
 				<width>35</width>
 				<height>35</height>
 				<colordiffuse>CCFFFFFF</colordiffuse>
 				<texture flipy="true" border="0,5,0,0" flipx="true">HomeSubEnd.png</texture>
+				<animation effect="slide" start="0,0" end="115,0" time="0" condition="Player.HasVideo">conditional</animation>
 			</control>
+			<include>IncludeSearch</include>
 			<control type="group" id="600">
 				<left>180</left>
 				<onup>9003</onup>
@@ -859,7 +861,7 @@
 					<include>HomeSubMenuAddons</include>
 				</control>
 				<include>IncludeSCC</include> <!-- Mod_Home -->
-				<include>IncludeTrakt</include> <!-- Mod_Home -->
+				<!-- <include>IncludeTrakt</include> --> <!-- Mod_Home -->
 			</control>
 			<control type="image">
 				<left>-100</left>
@@ -882,7 +884,8 @@
 				<height>60</height>
 				<onleft>9000</onleft>
 				<onright>9000</onright>
-				<onup>601</onup>
+				<onup condition="Player.HasVideo">601</onup>
+				<onup condition="!Player.HasVideo">9020</onup>
 				<ondown>9001</ondown>
 				<pagecontrol/>
 				<scrolltime>300</scrolltime>
@@ -992,7 +995,7 @@
 						<onclick>ActivateWindow(TVChannels)</onclick>
 						<icon/>
 						<thumb/>
-						<visible>PVR.HasTVChannels</visible>
+						<visible>PVR.HasTVChannels + !System.HasAddon(pvr.sledovanitv.cz)</visible>
 					</item>
 					<include>HomeItem</include>
 					<item id="2">
@@ -1223,7 +1226,7 @@
 				</control>
 			</control>
 			<control type="group">
-				<visible>!Skin.HasSetting(HomepageHideSearch)</visible>
+				<visible>!Skin.HasSetting(HomepageHideSearch) + Player.HasVideo</visible>
 				<animation effect="slide" start="0,0" end="-55,0" time="0" condition="Skin.HasSetting(HomepageHideFavourite)">conditional</animation>
 				<control type="button" id="22">
 					<description>Search push button</description>
@@ -1233,9 +1236,10 @@
 					<height>45</height>
 					<label>137</label>
 					<font/>
-					<onclick condition="System.AddonIsEnabled(script.globalsearch)">RunScript(script.globalsearch)</onclick>
-					<onclick condition="!System.AddonIsEnabled(script.globalsearch) + System.HasAddon(script.globalsearch)">EnableAddon(script.globalsearch)</onclick>
-					<onclick condition="!System.HasAddon(script.globalsearch)">InstallAddon(script.globalsearch)</onclick>
+					<!-- <onclick condition="System.AddonIsEnabled(script.globalsearch)">RunScript(script.globalsearch)</onclick> -->
+					<!-- <onclick condition="!System.AddonIsEnabled(script.globalsearch) + System.HasAddon(script.globalsearch)">EnableAddon(script.globalsearch)</onclick> -->
+					<!-- <onclick condition="!System.HasAddon(script.globalsearch)">InstallAddon(script.globalsearch)</onclick> -->
+					<onclick>ActivateWindow(1107)</onclick>
 					<texturefocus border="5">floor_buttonFO.png</texturefocus>
 					<texturenofocus border="5">floor_button.png</texturenofocus>
 					<onleft>20</onleft>
@@ -1269,6 +1273,19 @@
 				<!-- <visible>!Skin.HasSetting(homepageWeatherinfo)</visible> -->
 				<visible>Skin.HasSetting(LogoOn)</visible>
 			</control>
+			<control type="label">
+					<description>master</description>
+					<left>10</left>
+					<top>25</top>
+					<width>100</width>
+					<height>35</height>
+					<align>left</align>
+					<aligny>center</aligny>
+					<font>font12</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
+					<label>MASTER</label>
+				</control>
 			<include>Mod_Clock</include>
 			<include>HWInfobar</include>
 			<include>Calendar</include>

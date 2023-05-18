@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window id="1150" type="dialog">
+	<defaultcontrol always="true">9000</defaultcontrol>
+	<controls>
+		<control type="group">
+            <centerleft>50%</centerleft>
+            <width>1200</width> <!-- posun okna vodorovně -->
+            <centertop>50%</centertop>
+            <height>650</height> <!-- posun okna svisle -->
+			<include content="DialogBackgroundCommons">
+				<param name="DialogBackgroundWidth" value="1200" />
+				<param name="DialogBackgroundHeight" value="650" />
+				<param name="DialogHeaderWidth" value="1130" />
+				<param name="DialogHeaderLabel" value="ItemInfo" />
+				<param name="DialogHeaderId" value="2" />
+				<param name="CloseButtonLeft" value="1120" />
+			</include>
+			<include>ItemInfoGeneral</include>		
+		</control>
+	</controls>
+</window>

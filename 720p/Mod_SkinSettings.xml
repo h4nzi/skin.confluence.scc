@@ -24,8 +24,8 @@
 		</item>
 	</include>
 	
-	<!-- General -->
-	<include name="General">
+	<!-- GENERAL -->
+	<include name="Rating">
 		<control type="radiobutton" id="2002">
 						<description>Show Advanced Settings</description>
 						<width>750</width>
@@ -100,9 +100,9 @@
 						<font>font13</font>
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<label>Zobrazit EmuELEC</label>
-						<onclick>Skin.ToggleSetting(EmuElecOn)</onclick>
-						<selected>Skin.HasSetting(EmuElecOn)</selected>
+						<label>$LOCALIZE[31111] - EmuELEC</label>
+						<onclick>Skin.ToggleSetting(HomeMenuNoEmuElecButton)</onclick>
+						<selected>Skin.HasSetting(HomeMenuNoEmuElecButton)</selected>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<visible>System.AddonIsEnabled(script.emuelec.amlogic-ng.launcher)</visible>
@@ -117,6 +117,19 @@
 						<label>$LOCALIZE[31111] - Oblíbené</label>
 						<onclick>Skin.ToggleSetting(HomeMenuNoFavouritesButton)</onclick>
 						<selected>Skin.HasSetting(HomeMenuNoFavouritesButton)</selected>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+					</control>
+					<control type="radiobutton" id="2005">
+						<description>Hide power</description>
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<label>$LOCALIZE[31111] - Vypnuto</label>
+						<onclick>Skin.ToggleSetting(HomeMenuNoPowerButton)</onclick>
+						<selected>Skin.HasSetting(HomeMenuNoPowerButton)</selected>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 					</control>
@@ -137,6 +150,8 @@
 						<onright>62</onright>
 						<onup>9005</onup>
 						<ondown>9005</ondown>
+						
+	<!-- ROZŠÍŘENÁ NASTAVENÍ DOMOVSKÉ OBRAZOVKY -->
 						<control type="label" id="500">
 							<width>750</width>
 							<height>45</height>
@@ -185,7 +200,7 @@
 							<selected>Skin.HasSetting(HolidaysOn)</selected>
 							<texturefocus>MenuItemFO.png</texturefocus>
 							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<visible>System.AddonIsEnabled(service.holiday.vanio)</visible>
+							<visible>System.AddonIsEnabled(service.holidays)</visible>
 						</control>
 						<control type="radiobutton" id="505">
 							<description>Show Datum</description>
@@ -219,7 +234,6 @@
 							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<label>Zobrazit datový tok</label>
-							<include>DefaultSettingButton</include>
 							<onclick>Skin.ToggleSetting(show_RXTX)</onclick>
 							<selected>Skin.HasSetting(show_RXTX)</selected>
 							<texturefocus>MenuItemFO.png</texturefocus>
@@ -234,7 +248,6 @@
 							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<label>Zobrazit CPU info</label>
-							<include>DefaultSettingButton</include>
 							<onclick>Skin.ToggleSetting(show_CPUTemp)</onclick>
 							<selected>Skin.HasSetting(show_CPUTemp)</selected>
 							<texturefocus>MenuItemFO.png</texturefocus>
@@ -249,7 +262,6 @@
 							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<label>Zobrazit využití paměti RAM</label>
-							<include>DefaultSettingButton</include>
 							<onclick>Skin.ToggleSetting(show_MEM)</onclick>
 							<selected>Skin.HasSetting(show_MEM)</selected>
 							<texturefocus>MenuItemFO.png</texturefocus>
@@ -264,7 +276,6 @@
 							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<label>Zobrazit dostupnost sítě</label>
-							<include>DefaultSettingButton</include>
 							<onclick>Skin.ToggleSetting(show_net)</onclick>
 							<selected>Skin.HasSetting(show_net)</selected>
 							<texturefocus>MenuItemFO.png</texturefocus>
@@ -279,7 +290,6 @@
 							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<label>Zobrazit dostupnost NAS</label>
-							<include>DefaultSettingButton</include>
 							<onclick>Skin.ToggleSetting(show_nas)</onclick>
 							<selected>Skin.HasSetting(show_nas)</selected>
 							<texturefocus>MenuItemFO.png</texturefocus>
@@ -598,7 +608,6 @@
 					<visible>Container(9000).Hasfocus(8)</visible>
 				</control>
 	</include>
-	
 	<include name="HomeVideosButton">
 				<control type="button" id="416">
 							<width>750</width>
@@ -623,7 +632,7 @@
 							<texturefocus>MenuItemFO.png</texturefocus>
 							<texturenofocus>MenuItemNF.png</texturenofocus>
 							<onclick>Skin.SetAddon(HomeVideosButton7,xbmc.addon.video)</onclick>
-						</control>
+				</control>
 	</include>
 
 <!-- SKIN SETTINGS Konec -->

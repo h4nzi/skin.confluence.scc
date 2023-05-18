@@ -1,3 +1,30 @@
+[B]4.7.15.master-7[/B]
+- přidáno rozšířené hodnocení
+
+[B]4.7.15.master-6[/B]
+- změněno umístění vyhledávání (lupa), přidány položky Hledání v SCC, WS a YT
+- přidána informace o provedené kontrole VIP dní
+- oprava pohybu v submenu SCC
+
+[B]4.7.15.master-5[/B]
+- přidáno zobrazení VIP dní Webshare
+- přidána animace hodin
+
+[B]4.7.15.master-4[/B]
+- drobné úpravy
+
+[B]4.7.15.master-3[/B]
+- optimalizace
+
+[B]4.7.15.master-2[/B]
+- přidáno přeskakování reklam a návod k použití
+
+[B]4.7.15.master-1[/B]
+- změna pozadí
+- změna umístění hodin a počasí
+- přidání informační lišty (Infobox)
+- rozšířené nastavení
+
 [B]4.7.15[/B]
 
 - Fix image in select dialog

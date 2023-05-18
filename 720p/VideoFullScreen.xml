@@ -267,6 +267,14 @@
 						<visible>!Player.ChannelPreviewActive</visible>
 					</control>
 					<control type="image" id="1">
+						<description>Video HDR Image</description>
+						<width>80</width>
+						<height>35</height>
+						<aspectratio align="center">keep</aspectratio>
+						<texture>$INFO[VideoPlayer.HdrType,flagging/videohdr/,.png]</texture>
+						<visible>!Player.ChannelPreviewActive</visible>
+					</control>
+					<control type="image" id="1">
 						<description>Audio Codec Image</description>
 						<width>85</width>
 						<height>35</height>

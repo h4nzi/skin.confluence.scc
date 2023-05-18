@@ -131,8 +131,8 @@
 			<texture border="0,0,0,3">HomeSubEnd.png</texture>
 		</control>
 	</include>
-	<include name="HomeSubmenuSystem">
-		<control type="button" id="90555">
+	<include name="ModHomeSubMenuSystem">
+		<control type="button" id="90999">
 			<include>ButtonHomeSubCommonValues</include>
 			<label>Nastavení vzhledu</label>
 			<onclick>ActivateWindow(skinsettings)</onclick>
@@ -154,4 +154,5 @@
 			<visible>!String.IsEmpty(Skin.String(HomeVideosButton7))</visible>
 		</item>
 	</include>
+
 </includes>

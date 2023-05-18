@@ -19,7 +19,7 @@
 				<control type="label">
 					<description>Title label</description>
 					<left>180</left>
-					<top>220</top>
+					<top>320</top>#220
 					<height>20</height>
 					<width>540</width>
 					<label>20386</label>
@@ -35,7 +35,7 @@
 					<animation effect="slide" start="0,0" end="270,0" time="0" condition="String.IsEqual(Container(8000).NumItems,2)">conditional</animation>
 					<animation effect="slide" start="0,0" end="360,0" time="0" condition="String.IsEqual(Container(8000).NumItems,1)">conditional</animation>
 					<left>0</left>
-					<top>0</top>
+					<top>50</top>#0
 					<width>900</width>
 					<height>220</height>
 					<onleft>8000</onleft>
@@ -175,7 +175,7 @@
 				<control type="label">
 					<description>Title label</description>
 					<left>240</left>
-					<top>220</top>
+					<top>320</top>#220
 					<height>20</height>
 					<width>480</width>
 					<label>20387</label>
@@ -190,7 +190,7 @@
 					<animation effect="slide" start="0,0" end="240,0" time="0" condition="String.IsEqual(Container(8001).NumItems,2)">conditional</animation>
 					<animation effect="slide" start="0,0" end="360,0" time="0" condition="String.IsEqual(Container(8001).NumItems,1)">conditional</animation>
 					<left>0</left>
-					<top>0</top>
+					<top>50</top>#0
 					<width>960</width>
 					<height>240</height>
 					<onleft>8001</onleft>

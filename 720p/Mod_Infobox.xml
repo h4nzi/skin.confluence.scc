@@ -29,8 +29,10 @@
 					<aligny>center</aligny>
 					<font>font12</font>
 					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
 					<label>RX/TX: [COLOR lime]$INFO[Window(Home).Property(RX)][/COLOR] / [COLOR yellow]$INFO[Window(Home).Property(TX)][/COLOR] Mbps</label>
 					<visible>Skin.HasSetting(show_RXTX) + System.AddonIsEnabled(service.netspeed.monitor)</visible>
+					<!-- <visible>Skin.HasSetting(show_RXTX) + System.AddonIsEnabled(service.net)</visible> -->
 				</control>
 				<control type="label">
 					<description>CPU info</description>
@@ -38,9 +40,10 @@
 					<fadetime>300</fadetime>
 					<aligny>center</aligny>
 					<font>font12</font>
-					<textcolor>white</textcolor> - 
-					<label>CPU: $INFO[System.CoreUsage(0)]%/$INFO[System.CPUTemperature]/$INFO[System.CpuFrequency]</label>
-					<visible>Skin.HasSetting(show_CPUTemp) + System.CpuUsage + System.Platform.Linux</visible>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
+					<label>CPU: [COLOR cyan]$INFO[System.CoreUsage(0)]%[/COLOR] / [COLOR cyan]$INFO[System.CPUTemperature][/COLOR] / [COLOR cyan]$INFO[System.CpuFrequency][/COLOR]</label>
+					<visible>Skin.HasSetting(show_CPUTemp) + System.CpuUsage + System.Platform.Linux + !System.Platform.Android</visible>
 				</control>
 				<control type="label">
 					<description>CPU info</description>
@@ -48,8 +51,9 @@
 					<fadetime>300</fadetime>
 					<aligny>center</aligny>
 					<font>font12</font>
-					<textcolor>white</textcolor> - 
-					<label>CPU: $INFO[System.CoreUsage(0)]%/$INFO[System.CpuFrequency]</label>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
+					<label>CPU: [COLOR cyan]$INFO[System.CoreUsage(0)]%/$INFO[System.CPUTemperature]/$INFO[System.CpuFrequency][/COLOR]</label>
 					<visible>Skin.HasSetting(show_CPUTemp) + System.CpuUsage + System.Platform.Windows</visible>
 				</control>
 				<control type="group">
@@ -75,7 +79,7 @@
 						<right>30</right>
 						<top>5</top>
 						<aligny>center</aligny>
-						<width>120</width>
+						<width>100</width>
 						<fadetime>300</fadetime>
 						<label>MEM: $INFO[system.memory(used)]</label>
 						<font>font12</font>
@@ -101,6 +105,7 @@
 					<aspectratio aligny="center" align="center">keep</aspectratio>
 					<texture>status/internet.png</texture>
 					<visible>String.IsEqual(Window(Home).Property(inet), 0) + Skin.HasSetting(show_net) + System.AddonIsEnabled(service.ping.monitor)</visible>
+					<!-- <visible>String.IsEqual(Window(Home).Property(inet), 0) + Skin.HasSetting(show_net) + System.AddonIsEnabled(service.net)</visible> -->
 				</control>
 				<control type="image">
 					<description>Internet</description>
@@ -186,6 +191,23 @@
 					<aspectratio aligny="center" align="center">keep</aspectratio>
 					<texture>status/nas.png</texture>
 					<visible>!String.IsEqual(Window(Home).Property(NAS), 0) + Skin.HasSetting(show_nas) + System.AddonIsEnabled(service.ping.monitor)</visible>
+				</control>
+				<control type="image"><!-- mod shopping vanio -->
+					<description>shoping vanio</description>
+					<width>25</width>
+					<fadetime>300</fadetime>
+					<aspectratio aligny="center" align="center">keep</aspectratio>
+					<texture>status/shopping.png</texture>
+					<visible>String.IsEqual(Window(Home).Property(obchody, False) + String.IsEqual(Window(Home).Property(public_holiday), True) + System.HasAddon(service.holidays)</visible>
+				</control>				
+				<control type="image"><!-- mod shopping vanio -->
+					<description>shoping vanio</description>
+					<width>25</width>
+					<fadetime>300</fadetime>
+					<colordiffuse>red</colordiffuse>
+					<aspectratio aligny="center" align="center">keep</aspectratio>
+					<texture>status/shopping.png</texture>
+					<visible>String.IsEqual(Window(Home).Property(obchody), True) + String.IsEqual(Window(Home).Property(public_holiday), True) + System.HasAddon(service.holidays)</visible>
 				</control>
 			</control>
 	</include>

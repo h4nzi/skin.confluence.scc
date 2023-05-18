@@ -11,7 +11,8 @@
 		</item>
 		<item id="17">
 			<label>OBLÍBENÉ</label><!-- mod oblíbené) -->
-			<onclick>ActivateWindow(Favourites)</onclick>
+			<!-- <onclick>ActivateWindow(Favourites)</onclick> -->
+			<onclick>ActivateWindow(Favouritesbrowser)</onclick>
 			<icon/>
 			<thumb/>
 			<visible>!Skin.HasSetting(HomeMenuNoFavouritesButton)</visible>
@@ -19,7 +20,7 @@
 		<item id="15">
 			<label>S C C</label>
 			<onclick>RunAddon(plugin.video.stream-cinema-2-release)</onclick>
-			<onclick>RunAddon(script.vip)</onclick>
+			<onclick>RunScript(special://skin/scripts/scripty/vip.py)</onclick>
 			<icon/>
 			<thumb/>
 			<visible>System.AddonIsEnabled(plugin.video.stream-cinema-2-release) + !Skin.HasSetting(HomeMenuNoSCCButton)</visible>
@@ -38,33 +39,69 @@
 			<onclick>RunAddon(script.emuelec.amlogic-ng.launcher)</onclick>
 			<icon/>
 			<thumb/>
-			<visible>System.AddonIsEnabled(script.emuelec.amlogic-ng.launcher) + Skin.HasSetting(EmuElecOn)</visible>
+			<visible>System.AddonIsEnabled(script.emuelec.amlogic-ng.launcher) + !Skin.HasSetting(HomeMenuNoEmuElecButton)</visible>
+		</item>
+	</include>
+	<include name="HomeVypnout">
+		<item id="18">
+			<label>VYPNOUT</label><!-- mod-vypnout - úmyslně zdvojená položka-->
+			<onclick>ActivateWindow(ShutdownMenu)</onclick>
+			<icon>-</icon>
+			<thumb>-</thumb>
+			<visible>!Skin.HasSetting(HomeMenuNoPowerButton)</visible>
+			<!-- <visible>true</visible> -->
 		</item>
 	</include>
 	<include name="IncludeSCC">
 		<control type="grouplist" id="9019">
 			<include>HomeSubMenuCommonValues</include>
-			<onleft>9017</onleft>
-			<onright>9017</onright>
+			<onleft>9019</onleft>
+			<onright>9019</onright>
 			<visible>Container(9000).HasFocus(16)</visible>
 			<!--Buttons for the grouplist -->
 			<include>HomeSubMenuTrakt</include>
 		</control>
 		<control type="grouplist" id="9018">
 			<include>HomeSubMenuCommonValues</include>
-			<onleft>9017</onleft>
-			<onright>9017</onright>
+			<onleft>9018</onleft>
+			<onright>9018</onright>
 			<visible>Container(9000).HasFocus(15)</visible>
 			<!--Buttons for the grouplist -->
 			<include>HomeSubMenuSCC</include>
 		</control>
-		<!-- <control type="grouplist" id="9020"> -->
-			<!-- <include>HomeSubMenuCommonValues</include> -->
-			<!-- <onleft>9017</onleft> -->
-			<!-- <onright>9017</onright> -->
-			<!-- <visible>Container(9000).HasFocus(17)</visible> -->
-			<!-- Buttons for the grouplist -->
-			<!-- <include>HomeSubMenuSCC</include> -->
-		<!-- </control> -->
 	</include>
+	<include name="IncludeSearch">
+		<control type="group">
+				<visible>!Skin.HasSetting(HomepageHideSearch) + !Player.HasVideo</visible>
+				<control type="button" id="9020">
+					<description>Search push button</description>
+					<left>65</left>
+					<top>0</top>
+					<width>115</width>
+					<height>35</height>
+					<font>font12</font>
+					<textcolor>grey2</textcolor>
+					<focusedcolor>white</focusedcolor>
+					<label>  Hledat</label>
+					<onclick>ActivateWindow(1107)</onclick>
+					<colordiffuse>CCFFFFFF</colordiffuse>
+					<texturefocus flipy="true" border="8">HomeSubFO.png</texturefocus>
+					<texturenofocus flipy="true" border="8">HomeSubNF.png</texturenofocus>
+					<onleft>20</onleft>
+					<onright>601</onright>
+					<onup>9003</onup>
+					<ondown>9000</ondown>
+				</control>
+				<control type="image">
+					<description>Search Icon</description>
+					<left>140</left>
+					<top>0</top>
+					<width>35</width>
+					<height>35</height>
+					<aspectratio>keep</aspectratio>
+					<texture>icon_search.png</texture>
+				</control>
+		</control>
+	</include>
+
 </includes>
