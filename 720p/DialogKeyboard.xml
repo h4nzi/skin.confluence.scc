@@ -68,7 +68,7 @@
 					<aligny>center</aligny>
 				</control>
 			</control>
-			<control type="image"> <!-- textové pole -->
+			<control type="image">
 				<left>55</left>
 				<top>55</top>
 				<width>836</width>
@@ -96,7 +96,7 @@
 				<aspectratio>stretch</aspectratio>
 				<texture>DialogHeader.png</texture>
 			</control>
-			<control type="group"> <!-- celá klávesnice -->
+			<control type="group">
 				<left>45</left>
 				<top>150</top>
 				<!-- 1st row -->

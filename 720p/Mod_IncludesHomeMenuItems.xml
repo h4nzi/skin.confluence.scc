@@ -138,7 +138,7 @@
 			<onclick>ActivateWindow(skinsettings)</onclick>
 		</control>
 	</include>
-	<include name="HomeAddonItemsVideosEnhanced"><!-- IncludesHomeMenuItems.xml -->
+	<include name="HomeAddonItemsVideosEnhanced">
 		<item>
 			<label>$INFO[system.addontitle(Skin.String(HomeVideosButton6))]</label>
 			<onclick>RunAddon($INFO[Skin.String(HomeVideosButton6)])</onclick>
