@@ -1,25 +1,25 @@
-[B]4.7.15.master-7[/B]
+[B]4.7.15.nexus-7[/B]
 - přidáno rozšířené hodnocení
 
-[B]4.7.15.master-6[/B]
+[B]4.7.15.nexus-6[/B]
 - změněno umístění vyhledávání (lupa), přidány položky Hledání v SCC, WS a YT
 - přidána informace o provedené kontrole VIP dní
 - oprava pohybu v submenu SCC
 
-[B]4.7.15.master-5[/B]
+[B]4.7.15.nexus-5[/B]
 - přidáno zobrazení VIP dní Webshare
 - přidána animace hodin
 
-[B]4.7.15.master-4[/B]
+[B]4.7.15.nexus-4[/B]
 - drobné úpravy
 
-[B]4.7.15.master-3[/B]
+[B]4.7.15.nexus-3[/B]
 - optimalizace
 
-[B]4.7.15.master-2[/B]
+[B]4.7.15.nexus-2[/B]
 - přidáno přeskakování reklam a návod k použití
 
-[B]4.7.15.master-1[/B]
+[B]4.7.15.nexus-1[/B]
 - změna pozadí
 - změna umístění hodin a počasí
 - přidání informační lišty (Infobox)

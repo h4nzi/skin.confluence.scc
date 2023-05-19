@@ -12,7 +12,7 @@ zero = (" ")
 
 
 while True:
-    xbmcgui.Window(10000).setProperty('Puls', puls)
+    xbmcgui.Window(10000).setProperty('Pulsy', puls)
     time.sleep(1)
-    xbmcgui.Window(10000).setProperty('Puls', zero)
+    xbmcgui.Window(10000).setProperty('Pulsy', zero)
     time.sleep(1)
