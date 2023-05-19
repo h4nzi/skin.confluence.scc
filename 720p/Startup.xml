@@ -8,7 +8,7 @@
 			<width>100%</width>
 			<height>100%</height>
 			<aspectratio>keep</aspectratio>
-			<texture>startup/leia.jpg</texture>
+			<texture>startup/matrix.jpg</texture>
 			<animation effect="rotate" center="auto" time="6000" start="0" end="360" loop="false" condition="true" >Conditional</animation>
 		</control>
 		<control type="image">

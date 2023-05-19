@@ -58,7 +58,7 @@
 			<width>50</width>
 			<align>center</align>
 			<visible>!String.IsEmpty(ListItem.Label2) + Skin.HasSetting(RatingOn)</visible>
-			<control type="image"><!-- mod -->
+			<control type="image">
 				<left>3</left>
 				<top>-5</top>
 				<width>0</width>
@@ -83,6 +83,10 @@
 	</include>
 		
 	<!-- VARIABLES -->
+		<variable name="SkinSettingOSDAutoCloseTime"> <!-- mod OSD -->
+			<value condition="!String.IsEmpty(Skin.String(OSDAutoCloseTime))">$INFO[Skin.String(OSDAutoCloseTime)]</value>
+			<value condition="String.IsEmpty(Skin.String(OSDAutoCloseTime))">4</value> <!-- Default value -->
+		</variable>
 		<variable name="VideoHWDecoder">
 			<value condition="Player.Process(videohwdecoder)">Hardware Decoding</value>
 			<value>SW</value>
