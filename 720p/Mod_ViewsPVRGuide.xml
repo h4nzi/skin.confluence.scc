@@ -13,4 +13,5 @@
             <texture>flagging/pvr/live.png</texture>
         </control>
 	</include>
+	<expression name="epg_event_live">String.Contains(ListItem.Plot,Přímý přenos) | String.Contains(ListItem.Plot,Priamy prenos)</expression>
 </includes>

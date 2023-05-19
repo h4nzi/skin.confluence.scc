@@ -5,7 +5,7 @@
 	<include name="Calendar">
 		<control type="group">
 			<description>Holidays</description>
-			<right>5</right>
+			<right>10</right>
 			<top>30</top>
 			<width>20</width>
 			<height>50</height>
@@ -21,8 +21,21 @@
 						<font>font12</font>
 						<textcolor>white</textcolor>
 						<shadowcolor>black</shadowcolor>
-						<label>Jmeniny slaví [B][COLOR orange]$INFO[Window(Home).Property(Vanio jmeniny)][/COLOR][/B]</label>
-						<visible>System.AddonIsEnabled(service.holiday.vanio)</visible>
+						<label>Jmeniny slaví [B][COLOR orange]$INFO[Window(Home).Property(name_day)][/COLOR][/B]</label>
+						<visible>System.AddonIsEnabled(service.holidays) + String.IsEqual(Window(Home).Property(public_holiday), False)</visible>
+					</control>
+					<control type="label">
+						<description>Birthdays and Holidays</description>
+						<right>0</right>
+						<top>0</top>
+						<width>350</width>
+						<align>right</align>
+						<aligny>center</aligny>
+						<font>font12</font>
+						<textcolor>white</textcolor>
+						<shadowcolor>black</shadowcolor>
+						<label>[B][COLOR orange]$INFO[Window(Home).Property(name_day)][/COLOR][/B]</label>
+						<visible>System.AddonIsEnabled(service.holidays) + String.IsEqual(Window(Home).Property(public_holiday), True)</visible>
 					</control>
 					<control type="label">
 						<description>birthday</description>
@@ -47,6 +60,27 @@
 			<height>50</height>
 			<visible>Skin.HasSetting(DatumOn)</visible>
 			<animation effect="slide" start="0,0" end="0,-30" time="75" condition="!Skin.HasSetting(InfoboxOn)">conditional</animation>
+			<!-- <control type="image">
+					<!-- <description>shops_open</description> -->
+					<!-- <left>-80</left> -->
+					<!-- <top>-25</top> -->
+					<!-- <width>25</width> -->
+					<!-- <fadetime>300</fadetime> -->
+					<!-- <aspectratio aligny="center" align="center">keep</aspectratio> -->
+					<!-- <texture>status/shopping.png</texture> -->
+					<!-- <visible>String.IsEqual(Window(Home).Property(obchody), False)</visible> -->
+				<!-- </control> -->
+				<!-- <control type="image">
+					<!-- <description>shops_closed</description> -->
+					<!-- <left>-80</left> -->
+					<!-- <top>-25</top> -->
+					<!-- <width>25</width> -->
+					<!-- <fadetime>300</fadetime> -->
+					<!-- <colordiffuse>red</colordiffuse> -->
+					<!-- <aspectratio aligny="center" align="center">keep</aspectratio> -->
+					<!-- <texture>status/shopping.png</texture> -->
+					<!-- <visible>String.IsEqual(Window(Home).Property(obchody), True)</visible> -->
+				<!-- </control> -->
 			<control type="label">
 					<right>0</right>
 					<top>0</top>
@@ -74,7 +108,7 @@
 			</control>
 		<control type="grouplist">
 					<description>weather</description>
-					<right>5</right>
+					<right>10</right>
 					<top>35</top>
 					<width>200</width>
 					<height>60</height>
@@ -84,7 +118,7 @@
 					<!-- <visible>Skin.HasSetting(homepageWeatherinfo) + !String.IsEmpty(Weather.Plugin) + String.IsEmpty(Window(Home).Property(Birthday))</visible> -->
 					<visible>Skin.HasSetting(homepageWeatherinfo) + !String.IsEmpty(Weather.Plugin)</visible>
 					<animation effect="slide" start="0,0" end="0,30" time="75" condition="Skin.HasSetting(InfoboxOn)">conditional</animation>
-					<animation effect="slide" start="0,0" end="0,25" time="75" condition="Skin.HasSetting(HolidaysOn) + System.AddonIsEnabled(service.holiday.vanio)">conditional</animation>
+					<animation effect="slide" start="0,0" end="0,25" time="75" condition="Skin.HasSetting(HolidaysOn) + System.AddonIsEnabled(service.holidays)">conditional</animation>
 					<animation effect="slide" start="0,0" end="0,20" time="75" condition="!String.IsEmpty(Window(Home).Property(Birthday))">conditional</animation>
 					<control type="label">
 						<description>Temp label</description>

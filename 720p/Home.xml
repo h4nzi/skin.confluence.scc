@@ -519,15 +519,16 @@
 				<effect type="fade" start="100" end="0" time="225" />
 			</animation>
 			<visible>String.IsEmpty(Window(Videos).Property(PlayingBackgroundMedia))</visible>
-			<!-- <control type="image"> -->
-				<!-- <description>Background End image</description> -->
-				<!-- <left>145</left> -->
-				<!-- <top>0</top> -->
-				<!-- <width>35</width> -->
-				<!-- <height>35</height> -->
-				<!-- <colordiffuse>CCFFFFFF</colordiffuse> -->
-				<!-- <texture flipy="true" border="0,5,0,0" flipx="true">HomeSubEnd.png</texture> -->
-			<!-- </control> -->
+			<control type="image">
+				<description>Background End image</description>
+				<left>30</left>
+				<top>0</top>
+				<width>35</width>
+				<height>35</height>
+				<colordiffuse>CCFFFFFF</colordiffuse>
+				<texture flipy="true" border="0,5,0,0" flipx="true">HomeSubEnd.png</texture>
+				<animation effect="slide" start="0,0" end="115,0" time="0" condition="Player.HasVideo">conditional</animation>
+			</control>
 			<include>IncludeSearch</include>
 			<control type="group" id="600">
 				<left>180</left>
@@ -860,7 +861,7 @@
 					<include>HomeSubMenuAddons</include>
 				</control>
 				<include>IncludeSCC</include> <!-- Mod_Home -->
-				<include>IncludeTrakt</include> <!-- Mod_Home -->
+				<!-- <include>IncludeTrakt</include> --> <!-- Mod_Home -->
 			</control>
 			<control type="image">
 				<left>-100</left>
@@ -883,7 +884,8 @@
 				<height>60</height>
 				<onleft>9000</onleft>
 				<onright>9000</onright>
-				<onup>9020</onup>
+				<onup condition="Player.HasVideo">601</onup>
+				<onup condition="!Player.HasVideo">9020</onup>
 				<ondown>9001</ondown>
 				<pagecontrol/>
 				<scrolltime>300</scrolltime>
@@ -993,7 +995,7 @@
 						<onclick>ActivateWindow(TVChannels)</onclick>
 						<icon/>
 						<thumb/>
-						<visible>PVR.HasTVChannels</visible>
+						<visible>PVR.HasTVChannels + !System.HasAddon(pvr.sledovanitv.cz)</visible>
 					</item>
 					<include>HomeItem</include>
 					<item id="2">
@@ -1223,37 +1225,38 @@
 					<texture>icon_power.png</texture>
 				</control>
 			</control>
-			<!-- <control type="group"> -->
-				<!-- <visible>!Skin.HasSetting(HomepageHideSearch)</visible> -->
-				<!-- <animation effect="slide" start="0,0" end="-55,0" time="0" condition="Skin.HasSetting(HomepageHideFavourite)">conditional</animation> -->
-				<!-- <control type="button" id="22"> -->
-					<!-- <description>Search push button</description> -->
-					<!-- <left>110</left> -->
-					<!-- <top>0</top> -->
-					<!-- <width>45</width> -->
-					<!-- <height>45</height> -->
-					<!-- <label>137</label> -->
-					<!-- <font/> -->
+			<control type="group">
+				<visible>!Skin.HasSetting(HomepageHideSearch) + Player.HasVideo</visible>
+				<animation effect="slide" start="0,0" end="-55,0" time="0" condition="Skin.HasSetting(HomepageHideFavourite)">conditional</animation>
+				<control type="button" id="22">
+					<description>Search push button</description>
+					<left>110</left>
+					<top>0</top>
+					<width>45</width>
+					<height>45</height>
+					<label>137</label>
+					<font/>
 					<!-- <onclick condition="System.AddonIsEnabled(script.globalsearch)">RunScript(script.globalsearch)</onclick> -->
 					<!-- <onclick condition="!System.AddonIsEnabled(script.globalsearch) + System.HasAddon(script.globalsearch)">EnableAddon(script.globalsearch)</onclick> -->
 					<!-- <onclick condition="!System.HasAddon(script.globalsearch)">InstallAddon(script.globalsearch)</onclick> -->
-					<!-- <texturefocus border="5">floor_buttonFO.png</texturefocus> -->
-					<!-- <texturenofocus border="5">floor_button.png</texturenofocus> -->
-					<!-- <onleft>20</onleft> -->
-					<!-- <onright>21</onright> -->
-					<!-- <onup>9002</onup> -->
-					<!-- <ondown>9003</ondown> -->
-				<!-- </control> -->
-				<!-- <control type="image"> -->
-					<!-- <description>Search Icon</description> -->
-					<!-- <left>115</left> -->
-					<!-- <top>5</top> -->
-					<!-- <width>35</width> -->
-					<!-- <height>35</height> -->
-					<!-- <aspectratio>keep</aspectratio> -->
-					<!-- <texture>icon_search.png</texture> -->
-				<!-- </control> -->
-			<!-- </control> -->
+					<onclick>ActivateWindow(1107)</onclick>
+					<texturefocus border="5">floor_buttonFO.png</texturefocus>
+					<texturenofocus border="5">floor_button.png</texturenofocus>
+					<onleft>20</onleft>
+					<onright>21</onright>
+					<onup>9002</onup>
+					<ondown>9003</ondown>
+				</control>
+				<control type="image">
+					<description>Search Icon</description>
+					<left>115</left>
+					<top>5</top>
+					<width>35</width>
+					<height>35</height>
+					<aspectratio>keep</aspectratio>
+					<texture>icon_search.png</texture>
+				</control>
+			</control>
 		</control>
 		<control type="group">
 			<depth>DepthHeader</depth>
@@ -1267,96 +1270,11 @@
 				<texture>textures/confluence_logo_mod.png</texture>
 				<include>VisibleFadeEffect</include>
 				<include>Window_OpenClose_Animation</include>
-				<!-- <visible>!Skin.HasSetting(homepageWeatherinfo)</visible> -->
 				<visible>Skin.HasSetting(LogoOn)</visible>
 			</control>
 			<include>Mod_Clock</include>
 			<include>HWInfobar</include>
 			<include>Calendar</include>
-			<!-- <control type="group"> -->
-				<!-- <left>20</left> -->
-				<!-- <top>0</top> -->
-				<!-- <visible>Skin.HasSetting(homepageWeatherinfo) + !String.IsEmpty(Weather.Plugin)</visible> -->
-				<!-- <include>Window_OpenClose_Animation</include> -->
-				<!-- <control type="image"> -->
-					<!-- <description>Weather image</description> -->
-					<!-- <left>0</left> -->
-					<!-- <top>0</top> -->
-					<!-- <width>60</width> -->
-					<!-- <height>60</height> -->
-					<!-- <aspectratio>keep</aspectratio> -->
-					<!-- <texture>$INFO[Weather.ConditionsIcon]</texture> -->
-				<!-- </control> -->
-				<!-- <control type="label"> -->
-					<!-- <description>Location label</description> -->
-					<!-- <left>65</left> -->
-					<!-- <top>5</top> -->
-					<!-- <width>500</width> -->
-					<!-- <height>15</height> -->
-					<!-- <align>left</align> -->
-					<!-- <aligny>center</aligny> -->
-					<!-- <font>font10</font> -->
-					<!-- <textcolor>white</textcolor> -->
-					<!-- <shadowcolor>black</shadowcolor> -->
-					<!-- <label>$INFO[Window(Weather).Property(Location)]</label> -->
-				<!-- </control> -->
-				<!-- <control type="grouplist"> -->
-					<!-- <left>65</left> -->
-					<!-- <top>20</top> -->
-					<!-- <width>1000</width> -->
-					<!-- <height>30</height> -->
-					<!-- <orientation>horizontal</orientation> -->
-					<!-- <align>left</align> -->
-					<!-- <itemgap>0</itemgap> -->
-					<!-- <control type="label"> -->
-						<!-- <description>Temp label</description> -->
-						<!-- <width min="0" max="300">auto</width> -->
-						<!-- <height>30</height> -->
-						<!-- <align>left</align> -->
-						<!-- <aligny>center</aligny> -->
-						<!-- <font>font28_title</font> -->
-						<!-- <textcolor>white</textcolor> -->
-						<!-- <shadowcolor>black</shadowcolor> -->
-						<!-- <label>[B]$INFO[Window(Weather).Property(Current.Temperature)][/B]</label> -->
-					<!-- </control> -->
-					<!-- <control type="label"> -->
-						<!-- <description>Temp Units</description> -->
-						<!-- <width min="0" max="100">auto</width> -->
-						<!-- <height>22</height> -->
-						<!-- <font>font10</font> -->
-						<!-- <aligny>center</aligny> -->
-						<!-- <label>$INFO[System.TemperatureUnits]</label> -->
-						<!-- <textcolor>white</textcolor> -->
-						<!-- <shadowcolor>black</shadowcolor> -->
-						<!-- <visible>!String.IsEmpty(Window(Weather).Property(Current.Temperature))</visible> -->
-					<!-- </control> -->
-					<!-- <control type="label"> -->
-						<!-- <description>Conditions Label</description> -->
-						<!-- <width>500</width> -->
-						<!-- <height>22</height> -->
-						<!-- <font>font10</font> -->
-						<!-- <aligny>center</aligny> -->
-						<!-- <label>$INFO[Window(Weather).Property(Current.Condition),  ]</label> -->
-						<!-- <textcolor>grey2</textcolor> -->
-						<!-- <shadowcolor>black</shadowcolor> -->
-					<!-- </control> -->
-				<!-- </control> -->
-			<!-- </control> -->
-			<!-- <control type="label"> -->
-				<!-- <description>Date label</description> -->
-				<!-- <right>20</right> -->
-				<!-- <top>35</top> -->
-				<!-- <width>300</width> -->
-				<!-- <height>15</height> -->
-				<!-- <align>right</align> -->
-				<!-- <aligny>center</aligny> -->
-				<!-- <font>font10</font> -->
-				<!-- <textcolor>white</textcolor> -->
-				<!-- <shadowcolor>black</shadowcolor> -->
-				<!-- <label>$INFO[System.Date]</label> -->
-				<!-- <include>Window_OpenClose_Animation</include> -->
-				<!-- <animation effect="slide" start="0,0" end="-40,0" time="75" condition="Player.Muted">conditional</animation> -->
-			<!-- </control> -->
 		</control>
 	</controls>
 </window>

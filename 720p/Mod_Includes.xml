@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
+		<include file="Mod_Calendar.xml" />
 		<include file="Mod_Home.xml"/>
 		<include file="Mod_IncludesHomeMenuItems.xml" />
-		<!-- <include file="Mod_DialogPlayerProcessInfo.xml"/> -->
-		<include file="Mod_SkinSettings.xml" />
-		<include file="Mod_ViewsPVRGuide.xml" />
 		<include file="Mod_Infobox.xml" />
-		<include file="Mod_Calendar.xml" />
+		<include file="Mod_ItemInfo.xml" />		
+		<include file="Mod_SkinSettings.xml" />
+		<include file="Mod_Variables.xml" />
+		<include file="Mod_ViewsPVRGuide.xml" />
 		
-	<include name="Mod_Clock">
+		<include name="Mod_Clock">
 				<control type="label">
 					<description>time label</description>
-					<right>5</right>
+					<right>10</right>
 					<top>5</top>
 					<width>200</width>
 					<height>30</height>
@@ -25,32 +26,32 @@
 					<animation effect="slide" start="0,0" end="0,30" time="75" condition="Skin.HasSetting(InfoboxOn)">conditional</animation>
 				</control>
                 <control type="group">
-                        <visible>Integer.IsGreater(System.ProfileCount,1)</visible>
-                        <control type="image">
-                                <visible>Skin.HasSetting(show_profileavatar)</visible>
-                                <top>5</top>
-                                <left>1105</left>
-                                <width>30</width>
-                                <height>30</height>
-                                <animation effect="slide" start="0,0" end="-40,0" time="75" condition="Player.Muted">conditional</animation>
-                                <texture>$INFO[System.ProfileThumb]</texture>
-                                <aspectratio>scale</aspectratio>
-                        </control>
-                        <control type="label">
-                                <visible>Skin.HasSetting(show_profilename)</visible>
-                                <font>font28_title</font>
-                                <align>right</align>
-                                <top>5</top>
-                                <left>540</left>
-                                <textcolor>white</textcolor>
-                                <shadowcolor>black</shadowcolor>
-                                <aligny>center</aligny>
-                                <height>30</height>
-                                <width max="600">auto</width>
-                                <animation effect="slide" start="0,0" end="-40,0" time="75" condition="Player.Muted">conditional</animation>
-                                <label>$INFO[System.ProfileName]</label>
-                        </control>
-                </control>
+                    <visible>Integer.IsGreater(System.ProfileCount,1)</visible>
+                    <control type="image">
+                            <visible>Skin.HasSetting(show_profileavatar)</visible>
+                            <top>5</top>
+                            <left>1105</left>
+                            <width>30</width>
+                            <height>30</height>
+                            <animation effect="slide" start="0,0" end="-40,0" time="75" condition="Player.Muted">conditional</animation>
+                            <texture>$INFO[System.ProfileThumb]</texture>
+                            <aspectratio>scale</aspectratio>
+                    </control>
+                    <control type="label">
+                            <visible>Skin.HasSetting(show_profilename)</visible>
+                            <font>font28_title</font>
+                            <align>right</align>
+                            <top>5</top>
+                            <left>540</left>
+                            <textcolor>white</textcolor>
+                            <shadowcolor>black</shadowcolor>
+                            <aligny>center</aligny>
+                            <height>30</height>
+                            <width max="600">auto</width>
+                            <animation effect="slide" start="0,0" end="-40,0" time="75" condition="Player.Muted">conditional</animation>
+                            <label>$INFO[System.ProfileName]</label>
+                    </control>
+        </control>
 	</include>
 	<include name="VideoRating">
 		<control type="group">
@@ -59,7 +60,7 @@
 			<width>50</width>
 			<align>center</align>
 			<visible>!String.IsEmpty(ListItem.Label2) + Skin.HasSetting(RatingOn)</visible>
-			<control type="image"><!-- mod -->
+			<control type="image">
 				<left>3</left>
 				<top>-5</top>
 				<width>0</width>
@@ -82,22 +83,127 @@
 			</control>
 		</control>
 	</include>
-	
-		
-	<!-- VARIABLES -->
-		<variable name="SkinSettingOSDAutoCloseTime"> <!-- mod OSD -->
-			<value condition="!String.IsEmpty(Skin.String(OSDAutoCloseTime))">$INFO[Skin.String(OSDAutoCloseTime)]</value>
-			<value condition="String.IsEmpty(Skin.String(OSDAutoCloseTime))">4</value> <!-- Default value -->
-		</variable>
-		<variable name="RatingSettingLabel2Var">
-			<value condition="Skin.HasSetting(circle_rating)">$LOCALIZE[563]</value><!-- hodnocení -->
-			<value condition="Skin.HasSetting(circle_userrating)">$LOCALIZE[38018]</value><!-- moje hodnocení -->
-			<value>$LOCALIZE[16018]</value><!-- žádné -->
-		</variable>
-		<variable name="VideoHWDecoder">
-			<value condition="Player.Process(videohwdecoder)">Hardware Decoding</value>
-			<value>SW</value>
-		</variable>
-		
-	<expression name="epg_event_live">String.Contains(ListItem.Plot,Přímý přenos) | String.Contains(ListItem.Plot,Priamy prenos)</expression>
+	<include name="CommonMyWindows">
+				<width>340</width>
+				<height>40</height>
+				<textcolor>grey2</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<align>center</align>
+				<textwidth>290</textwidth>
+				<texturefocus border="25,5,25,5">ShutdownButtonFocus.png</texturefocus>
+				<texturenofocus border="25,5,25,5">ShutdownButtonNoFocus.png</texturenofocus>
+				<pulseonselect>no</pulseonselect>
+				<font>font13</font>
+	</include>
+	<include name="TestsWindows">
+				<width>440</width>
+				<height>40</height>
+				<radioposx>380</radioposx>
+				<textcolor>grey2</textcolor>
+				<focusedcolor>yellow</focusedcolor>
+				<textoffsetx>40</textoffsetx>
+				<textwidth>290</textwidth>
+				<texturefocus border="25,5,25,5">ShutdownButtonNoFocus.png</texturefocus>
+				<texturenofocus border="25,5,25,5">ShutdownButtonNoFocus.png</texturenofocus>
+				<font>font13</font>
+	</include>
+	<include name="MyKeyboardButton">
+		<width>55</width>
+		<height>55</height>
+		<texturenofocus border="3">KeyboardKeyNF.png</texturenofocus>
+		<texturefocus border="5">KeyboardKey.png</texturefocus>
+		<align>center</align>
+		<aligny>center</aligny>
+		<font>font30</font>
+		<focusedcolor>black</focusedcolor>
+	</include>
+	<include name="MediaRating">
+		<param name="width">170</param>
+		<param name="visible">true</param>
+		<definition>
+            <control type="group">
+                <visible>!String.IsEmpty(ListItem.Rating($PARAM[source])) + $PARAM[visible]</visible>
+                <width>$PARAM[width]</width>
+                <control type="label">
+                    <left>0</left>
+                    <width>60</width>
+                    <height>60</height>
+                    <align>right</align>
+                    <aligny>center</aligny>
+                    <label>$PARAM[text]:</label>
+                    <font>font12_title</font>
+					<textcolor>grey</textcolor>
+                    <visible>![String.IsEqual(ListItem.Rating($PARAM[source]),ListItem.Rating) + String.IsEqual(ListItem.Votes($PARAM[source]),ListItem.Votes)]</visible>
+                </control>
+                <control type="label">
+                    <left>0</left>
+                    <width>60</width>
+                    <height>60</height>
+                    <align>right</align>
+                    <aligny>center</aligny>
+                    <label>$PARAM[text]:</label>
+                    <font>font12_title</font>
+					<textcolor>blue</textcolor>
+                    <visible>String.IsEqual(ListItem.Rating($PARAM[source]),ListItem.Rating) + String.IsEqual(ListItem.Votes($PARAM[source]),ListItem.Votes)</visible>
+                </control>
+                <control type="group">
+                    <left>60</left>
+                    <width>115</width>
+                    <control type="label">
+                        <left>10</left>
+                        <width>95</width>
+                        <height>60</height>
+                        <align>left</align>
+                        <aligny>center</aligny>
+                        <label>$INFO[ListItem.Rating($PARAM[source])]$INFO[ListItem.Votes($PARAM[source]),/]</label>
+                        <font>font12</font>
+                    </control>
+                </control>
+            </control>
+        </definition>
+	</include>
+	<include name="AdvancedRating">
+		<param name="visible_left">true</param>
+		<definition>
+            <control type="grouplist">
+                <orientation>horizontal</orientation>
+                <right>530</right>
+                <top>650</top>
+                <height>70</height>
+                <align>left</align>
+                <itemgap>0</itemgap>
+                <width>700</width>
+                <usecontrolcoords>true</usecontrolcoords>
+                <visible>$PARAM[visible_left]</visible>
+                <include content="MediaRating">
+                    <param name="text" value="CSFD" />
+                    <param name="source" value="csfd" />
+                </include>
+                <include content="MediaRating">
+                    <param name="text" value="TMDB" />
+                    <param name="source" value="tmdb" />
+                </include>
+                <include content="MediaRating">
+                    <param name="text" value="Trakt" />
+                    <param name="source" value="trakt" />
+                </include>
+                <include content="MediaRating">
+                    <param name="text" value="TVDB" />
+                    <param name="source" value="tvdb" />
+                </include>
+                <include content="MediaRating">
+                    <param name="text" value="IMDB" />
+                    <param name="source" value="imdb" />
+                </include>
+                <include content="MediaRating">
+                    <param name="text" value="Metacritic" />
+                    <param name="source" value="Metacritic" />
+                </include>
+                <include content="MediaRating">
+                    <param name="text" value="Rotten Tomatoes" />
+                    <param name="source" value="Rotten Tomatoes" />
+                </include>
+			</control>
+		</definition>
+	</include>
 </includes>

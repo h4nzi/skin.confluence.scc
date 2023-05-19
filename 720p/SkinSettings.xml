@@ -284,7 +284,7 @@
 						<onclick>Skin.SelectBool(31962, 31963|show_profilename, 31964|show_profileavatar, 16018|show_none)</onclick>
 						<label2>$VAR[ProfileIdentificationLabel2Var]</label2>
 					</control>
-					<include>General</include>
+					<include>Rating</include>
 				</control>
 				<control type="scrollbar" id="60">
 					<left>1060</left>
@@ -1020,7 +1020,7 @@
 							<texturenofocus>MenuItemNF.png</texturenofocus>
 							<onclick>Skin.SetAddon(HomeVideosButton5,xbmc.addon.video)</onclick>
 						</control>
-						<include>HomeVideosButton</include><!-- Mod_SkinSettings.xml -->
+						<include>HomeVideosButton</include>
 						<control type="label" id="420">
 							<width>750</width>
 							<height>45</height>

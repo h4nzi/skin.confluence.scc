@@ -131,14 +131,14 @@
 			<texture border="0,0,0,3">HomeSubEnd.png</texture>
 		</control>
 	</include>
-	<include name="HomeSubmenuSystem">
-		<control type="button" id="9090999">
+	<include name="ModHomeSubMenuSystem">
+		<control type="button" id="90999">
 			<include>ButtonHomeSubCommonValues</include>
 			<label>Nastavení vzhledu</label>
 			<onclick>ActivateWindow(skinsettings)</onclick>
 		</control>
 	</include>
-	<include name="HomeAddonItemsVideosEnhanced"><!-- IncludesHomeMenuItems.xml -->
+	<include name="HomeAddonItemsVideosEnhanced">
 		<item>
 			<label>$INFO[system.addontitle(Skin.String(HomeVideosButton6))]</label>
 			<onclick>RunAddon($INFO[Skin.String(HomeVideosButton6)])</onclick>
@@ -154,47 +154,5 @@
 			<visible>!String.IsEmpty(Skin.String(HomeVideosButton7))</visible>
 		</item>
 	</include>
-	<include name="IncludeSearch">
-		<visible>!VideoPlayer.Content(LiveTV)</visible>
-		<control type="group">
-				<control type="image">
-					<description>Background End image</description>
-					<left>30</left>
-					<top>0</top>
-					<width>35</width>
-					<height>35</height>
-					<colordiffuse>CCFFFFFF</colordiffuse>
-					<texture flipy="true" border="0,5,0,0" flipx="true">HomeSubEnd.png</texture>
-					<animation effect="slide" start="0,0" end="145,0" time="0" condition="!System.HasAddon(script.globalsearch)">Conditional</animation>
-				</control>
-				<control type="button" id="9020">
-					<description>Search push button</description>
-					<left>65</left>
-					<top>0</top>
-					<width>120</width>
-					<height>35</height>
-					<font>font12</font>
-					<textcolor>grey2</textcolor>
-					<focusedcolor>white</focusedcolor>
-					<label>  Hledat</label>
-					<onclick>ActivateWindow(1107)</onclick>
-					<colordiffuse>CCFFFFFF</colordiffuse>
-					<texturefocus flipy="true" border="8">HomeSubFO.png</texturefocus>
-					<texturenofocus flipy="true" border="8">HomeSubNF.png</texturenofocus>
-					<onleft>20</onleft>
-					<onright>601</onright>
-					<onup>9003</onup>
-					<ondown>9000</ondown>
-				</control>
-				<control type="image">
-					<description>Search Icon</description>
-					<left>140</left>
-					<top>0</top>
-					<width>35</width>
-					<height>35</height>
-					<aspectratio>keep</aspectratio>
-					<texture>icon_search.png</texture>
-				</control>
-		</control>
-	</include>
+
 </includes>
