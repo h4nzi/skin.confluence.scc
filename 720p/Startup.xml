@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
-	<onload>AlarmClock(Skin,ReplaceWindow($INFO[System.StartupWindow]),00:10,silent)</onload>
+	<onload condition="Skin.HasSetting(HomeMenuNoSplash)">ReplaceWindow($INFO[System.StartupWindow])</onload>
+	<onload condition="!Skin.HasSetting(HomeMenuNoSplash)">AlarmClock(Skin,ReplaceWindow($INFO[System.StartupWindow]),00:10,silent)</onload>
 	<controls>
 		<control type="image">
 			<centerleft>50%</centerleft>

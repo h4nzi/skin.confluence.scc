@@ -2,6 +2,7 @@
 <includes>
 		<include file="Mod_Home.xml"/>
 		<include file="Mod_IncludesHomeMenuItems.xml" />
+		<!-- <include file="Mod_DialogPlayerProcessInfo.xml"/> -->
 		<include file="Mod_SkinSettings.xml" />
 		<include file="Mod_ViewsPVRGuide.xml" />
 		<include file="Mod_Infobox.xml" />
@@ -19,7 +20,7 @@
 					<font>font40</font>
 					<textcolor>white</textcolor>
 					<shadowcolor>black</shadowcolor>
-					<label>$INFO[System.Time]</label>
+					<label>$INFO[System.Time(hh)]$INFO[Window(Home).Property(Pulsy)]$INFO[System.Time(mm)]</label>
 					<animation effect="slide" start="0,0" end="-40,0" time="75" condition="Player.Muted">conditional</animation>
 					<animation effect="slide" start="0,0" end="0,30" time="75" condition="Skin.HasSetting(InfoboxOn)">conditional</animation>
 				</control>
@@ -58,7 +59,7 @@
 			<width>50</width>
 			<align>center</align>
 			<visible>!String.IsEmpty(ListItem.Label2) + Skin.HasSetting(RatingOn)</visible>
-			<control type="image">
+			<control type="image"><!-- mod -->
 				<left>3</left>
 				<top>-5</top>
 				<width>0</width>
@@ -81,21 +82,21 @@
 			</control>
 		</control>
 	</include>
+	
 		
 	<!-- VARIABLES -->
 		<variable name="SkinSettingOSDAutoCloseTime"> <!-- mod OSD -->
 			<value condition="!String.IsEmpty(Skin.String(OSDAutoCloseTime))">$INFO[Skin.String(OSDAutoCloseTime)]</value>
 			<value condition="String.IsEmpty(Skin.String(OSDAutoCloseTime))">4</value> <!-- Default value -->
 		</variable>
+		<variable name="RatingSettingLabel2Var">
+			<value condition="Skin.HasSetting(circle_rating)">$LOCALIZE[563]</value><!-- hodnocení -->
+			<value condition="Skin.HasSetting(circle_userrating)">$LOCALIZE[38018]</value><!-- moje hodnocení -->
+			<value>$LOCALIZE[16018]</value><!-- žádné -->
+		</variable>
 		<variable name="VideoHWDecoder">
 			<value condition="Player.Process(videohwdecoder)">Hardware Decoding</value>
 			<value>SW</value>
-		</variable>
-			<variable name="videohdr">
-			<value condition="String.Contains(ListItem.HdrType,hdr)">hdr10</value>
-			<value condition="String.Contains(ListItem.HdrType,dolbyvision)">dolbyvision</value>
-			<value condition="String.Contains(ListItem.HdrType,dv)">dolbyvision</value>
-			<value condition="String.Contains(ListItem.HdrType,hlg)">hlg</value>
 		</variable>
 		
 	<expression name="epg_event_live">String.Contains(ListItem.Plot,Přímý přenos) | String.Contains(ListItem.Plot,Priamy prenos)</expression>

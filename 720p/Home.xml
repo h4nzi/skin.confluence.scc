@@ -519,15 +519,16 @@
 				<effect type="fade" start="100" end="0" time="225" />
 			</animation>
 			<visible>String.IsEmpty(Window(Videos).Property(PlayingBackgroundMedia))</visible>
-			<control type="image">
-				<description>Background End image</description>
-				<left>145</left>
-				<top>0</top>
-				<width>35</width>
-				<height>35</height>
-				<colordiffuse>CCFFFFFF</colordiffuse>
-				<texture flipy="true" border="0,5,0,0" flipx="true">HomeSubEnd.png</texture>
-			</control>
+			<!-- <control type="image"> -->
+				<!-- <description>Background End image</description> -->
+				<!-- <left>145</left> -->
+				<!-- <top>0</top> -->
+				<!-- <width>35</width> -->
+				<!-- <height>35</height> -->
+				<!-- <colordiffuse>CCFFFFFF</colordiffuse> -->
+				<!-- <texture flipy="true" border="0,5,0,0" flipx="true">HomeSubEnd.png</texture> -->
+			<!-- </control> -->
+			<include>IncludeSearch</include>
 			<control type="group" id="600">
 				<left>180</left>
 				<onup>9003</onup>
@@ -882,7 +883,7 @@
 				<height>60</height>
 				<onleft>9000</onleft>
 				<onright>9000</onright>
-				<onup>601</onup>
+				<onup>9020</onup>
 				<ondown>9001</ondown>
 				<pagecontrol/>
 				<scrolltime>300</scrolltime>
@@ -992,7 +993,7 @@
 						<onclick>ActivateWindow(TVChannels)</onclick>
 						<icon/>
 						<thumb/>
-						<visible>PVR.HasTVChannels + !System.HasAddon(pvr.sledovanitv.cz)</visible>
+						<visible>PVR.HasTVChannels</visible>
 					</item>
 					<include>HomeItem</include>
 					<item id="2">
@@ -1075,6 +1076,7 @@
 			<ondown>21</ondown>
 			<control type="fixedlist" id="700">
 				<animation effect="slide" start="0,0" end="-91,0" time="0" condition="String.IsEqual(Container(700).NumItems,2) | String.IsEqual(Container(700).NumItems,4)">conditional</animation>
+				<animation effect="slide" start="0,0" end="91,0" time="0" condition="String.IsEqual(Container(700).NumItems,6)">conditional</animation>
 				<visible>Container(9000).HasFocus(2) | Container(9000).HasFocus(10) | Container(9000).HasFocus(11)</visible>
 				<onleft>700</onleft>
 				<onright>700</onright>
@@ -1221,37 +1223,37 @@
 					<texture>icon_power.png</texture>
 				</control>
 			</control>
-			<control type="group">
-				<visible>!Skin.HasSetting(HomepageHideSearch)</visible>
-				<animation effect="slide" start="0,0" end="-55,0" time="0" condition="Skin.HasSetting(HomepageHideFavourite)">conditional</animation>
-				<control type="button" id="22">
-					<description>Search push button</description>
-					<left>110</left>
-					<top>0</top>
-					<width>45</width>
-					<height>45</height>
-					<label>137</label>
-					<font/>
-					<onclick condition="System.AddonIsEnabled(script.globalsearch)">RunScript(script.globalsearch)</onclick>
-					<onclick condition="!System.AddonIsEnabled(script.globalsearch) + System.HasAddon(script.globalsearch)">EnableAddon(script.globalsearch)</onclick>
-					<onclick condition="!System.HasAddon(script.globalsearch)">InstallAddon(script.globalsearch)</onclick>
-					<texturefocus border="5">floor_buttonFO.png</texturefocus>
-					<texturenofocus border="5">floor_button.png</texturenofocus>
-					<onleft>20</onleft>
-					<onright>21</onright>
-					<onup>9002</onup>
-					<ondown>9003</ondown>
-				</control>
-				<control type="image">
-					<description>Search Icon</description>
-					<left>115</left>
-					<top>5</top>
-					<width>35</width>
-					<height>35</height>
-					<aspectratio>keep</aspectratio>
-					<texture>icon_search.png</texture>
-				</control>
-			</control>
+			<!-- <control type="group"> -->
+				<!-- <visible>!Skin.HasSetting(HomepageHideSearch)</visible> -->
+				<!-- <animation effect="slide" start="0,0" end="-55,0" time="0" condition="Skin.HasSetting(HomepageHideFavourite)">conditional</animation> -->
+				<!-- <control type="button" id="22"> -->
+					<!-- <description>Search push button</description> -->
+					<!-- <left>110</left> -->
+					<!-- <top>0</top> -->
+					<!-- <width>45</width> -->
+					<!-- <height>45</height> -->
+					<!-- <label>137</label> -->
+					<!-- <font/> -->
+					<!-- <onclick condition="System.AddonIsEnabled(script.globalsearch)">RunScript(script.globalsearch)</onclick> -->
+					<!-- <onclick condition="!System.AddonIsEnabled(script.globalsearch) + System.HasAddon(script.globalsearch)">EnableAddon(script.globalsearch)</onclick> -->
+					<!-- <onclick condition="!System.HasAddon(script.globalsearch)">InstallAddon(script.globalsearch)</onclick> -->
+					<!-- <texturefocus border="5">floor_buttonFO.png</texturefocus> -->
+					<!-- <texturenofocus border="5">floor_button.png</texturenofocus> -->
+					<!-- <onleft>20</onleft> -->
+					<!-- <onright>21</onright> -->
+					<!-- <onup>9002</onup> -->
+					<!-- <ondown>9003</ondown> -->
+				<!-- </control> -->
+				<!-- <control type="image"> -->
+					<!-- <description>Search Icon</description> -->
+					<!-- <left>115</left> -->
+					<!-- <top>5</top> -->
+					<!-- <width>35</width> -->
+					<!-- <height>35</height> -->
+					<!-- <aspectratio>keep</aspectratio> -->
+					<!-- <texture>icon_search.png</texture> -->
+				<!-- </control> -->
+			<!-- </control> -->
 		</control>
 		<control type="group">
 			<depth>DepthHeader</depth>
