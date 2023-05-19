@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 
-	<include file="Mod_Includes.xml" />
+	<include file="Mod_Includes.xml" /><!-- mod -->
 	
 	<include file="Defaults.xml" />
 	<include file="Includes_DialogSelect.xml" />
@@ -526,13 +526,19 @@
 	</variable>
 	<variable name="audiocodec">
 		<value condition="String.StartsWith(ListItem.AudioCodec,mp3)">mp3</value>
+		<value condition="String.Contains(ListItem.AudioCodec,e-ac-3)">eac3</value>
+		<value condition="String.Contains(ListItem.AudioCodec,ac-3)">ac3</value>
 		<value>$INFO[ListItem.AudioCodec]</value>
 	</variable>
 	<variable name="videocodec">
 		<value condition="[String.StartsWith(ListItem.VideoCodec,div) | String.IsEqual(ListItem.VideoCodec,dx50)]">divx</value>
 		<value condition="String.Contains(ListItem.VideoCodec,mpeg4)">mpeg4</value>
+		<value condition="String.Contains(ListItem.VideoCodec,mpeg-4 visual)">mpeg4</value>
+		<value condition="String.Contains(ListItem.VideoCodec,avc)">h264</value>
+		<value condition="String.Contains(ListItem.HdrType,hdr)">hdr10</value>
 		<value>$INFO[ListItem.VideoCodec]</value>
 	</variable>
+	
 	<variable name="SeekLabel">
 		<value condition="Player.IsTempo + String.StartsWith(Player.PlaySpeed,0.)">$LOCALIZE[31045]</value>
 		<value condition="Player.IsTempo + String.StartsWith(Player.PlaySpeed,1.)">$LOCALIZE[31044]</value>

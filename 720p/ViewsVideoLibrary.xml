@@ -1422,7 +1422,7 @@
 					<include>VideoCodecFlaggingConditions</include>
 					<include>AudioCodecFlaggingConditions</include>
 					<include>AudioChannelsFlaggingConditions</include>
-					<include>AspectCodecFlaggingConditions</include>
+					<include>AspectCodecFlaggingConditions</include>				
 					<include>VideoStereoscopicsFlaggingConditions</include>
 					<include>VideoTypeHackFlaggingConditions</include>
 				</control>
@@ -1449,12 +1449,12 @@
 					</control>
 					<control type="label">
 						<description>Year Value</description>
-						<left>430</left>
+						<left>400</left>
 						<top>360</top>
-						<width>340</width>
+						<width>80</width>
 						<height>25</height>
 						<label fallback="10005">$INFO[listitem.Year]</label>
-						<align>left</align>
+						<align>right</align>
 						<aligny>center</aligny>
 						<font>font13</font>
 						<scroll>true</scroll>
@@ -1475,10 +1475,10 @@
 						<description>Duration Value</description>
 						<left>400</left>
 						<top>335</top>
-						<width>100</width>
+						<width>80</width>
 						<height>25</height>
 						<label fallback="10005">$INFO[listitem.Duration]</label>
-						<align>left</align>
+						<align>right</align>
 						<aligny>center</aligny>
 						<font>font13</font>
 						<scroll>true</scroll>

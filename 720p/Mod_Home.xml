@@ -3,7 +3,7 @@
 <!-- HOMESCREEN MAIN MENU -->
 	<include name="HomeItem">
 		<item id="12">
-			<label>SledováníTV</label>
+			<label>SledováníTV</label><!-- mod sledováníTV) -->
 			<onclick>ActivateWindow(TVChannels)</onclick>
 			<icon/>
 			<thumb/>
@@ -15,7 +15,7 @@
 			<onclick>RunAddon(script.vip)</onclick>
 			<icon/>
 			<thumb/>
-			<visible>System.HasAddon(plugin.video.stream-cinema-2-release) + !Skin.HasSetting(HomeMenuNoSCCButton)</visible>
+			<visible>System.AddonIsEnabled(plugin.video.stream-cinema-2-release) + !Skin.HasSetting(HomeMenuNoSCCButton)</visible>
 		</item>
 		<!-- <item id="16"> -->
 			<!-- <label>TRAKT</label> -->
@@ -26,12 +26,12 @@
 		<!-- </item> -->
 	</include>
 	<include name="HomeEmuelec">
-		<item id="9">
+		<item id="9"><!-- mod-emuelec -->
 			<label>EMUELEC</label>
 			<onclick>RunAddon(script.emuelec.amlogic-ng.launcher)</onclick>
 			<icon/>
 			<thumb/>
-			<visible>System.HasAddon(script.emuelec.amlogic-ng.launcher) + Skin.HasSetting(EmuElecOn)</visible>
+			<visible>System.AddonIsEnabled(script.emuelec.amlogic-ng.launcher) + Skin.HasSetting(EmuElecOn)</visible>
 		</item>
 	</include>
 	<include name="IncludeSCC">

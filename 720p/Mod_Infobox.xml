@@ -30,7 +30,7 @@
 					<font>font12</font>
 					<textcolor>white</textcolor>
 					<label>RX/TX: [COLOR lime]$INFO[Window(Home).Property(RX)][/COLOR] / [COLOR yellow]$INFO[Window(Home).Property(TX)][/COLOR] Mbps</label>
-					<visible>Skin.HasSetting(show_RXTX) + System.HasAddon(service.netspeed.monitor)</visible>
+					<visible>Skin.HasSetting(show_RXTX) + System.AddonIsEnabled(service.netspeed.monitor)</visible>
 				</control>
 				<control type="label">
 					<description>CPU info</description>
@@ -40,7 +40,7 @@
 					<font>font12</font>
 					<textcolor>white</textcolor> - 
 					<label>CPU: $INFO[System.CoreUsage(0)]%/$INFO[System.CPUTemperature]/$INFO[System.CpuFrequency]</label>
-					<visible>Skin.HasSetting(show_CPUTemp) + System.CpuUsage + System.Platform.Linux</visible>
+					<visible>Skin.HasSetting(show_CPUTemp) + System.CpuUsage + System.Platform.Linux + !System.Platform.Android</visible>
 				</control>
 				<control type="label">
 					<description>CPU info</description>
@@ -69,7 +69,19 @@
 						<font>font12</font>
 						<textcolor>white</textcolor>
 						<shadowcolor>black</shadowcolor>
-						<visible>Skin.HasSetting(show_MEM)</visible>
+						<visible>!System.Platform.Android</visible>
+					</control>
+					<control type="label">
+						<right>30</right>
+						<top>5</top>
+						<aligny>center</aligny>
+						<width>100</width>
+						<fadetime>300</fadetime>
+						<label>MEM: $INFO[system.memory(used)]</label>
+						<font>font12</font>
+						<textcolor>white</textcolor>
+						<shadowcolor>black</shadowcolor>
+						<visible>System.Platform.Android</visible>
 					</control>
 					<control type="progress">
 						<right>0</right>
@@ -78,7 +90,7 @@
 						<height>10</height>
 						<texturebg>textures/border.png</texturebg>
 						<info>System.Memory(used)</info>
-						<visible>Skin.HasSetting(show_MEM)</visible>
+						<visible>!System.Platform.Android</visible>
 					</control>
 				</control>
 				<control type="image">
@@ -88,7 +100,7 @@
 					<fadetime>300</fadetime>
 					<aspectratio aligny="center" align="center">keep</aspectratio>
 					<texture>status/internet.png</texture>
-					<visible>String.IsEqual(Window(Home).Property(inet), 0) + Skin.HasSetting(show_net) + System.HasAddon(service.ping.monitor)</visible>
+					<visible>String.IsEqual(Window(Home).Property(inet), 0) + Skin.HasSetting(show_net) + System.AddonIsEnabled(service.ping.monitor)</visible>
 				</control>
 				<control type="image">
 					<description>Internet</description>
@@ -97,7 +109,7 @@
 					<colordiffuse>red</colordiffuse>
 					<aspectratio aligny="center" align="center">keep</aspectratio>
 					<texture>status/internet.png</texture>
-					<visible>!String.IsEqual(Window(Home).Property(inet), 0) + Skin.HasSetting(show_net) + System.HasAddon(service.ping.monitor)</visible>
+					<visible>!String.IsEqual(Window(Home).Property(inet), 0) + Skin.HasSetting(show_net) + System.AddonIsEnabled(service.ping.monitor)</visible>
 				</control>
 				<control type="image">
 					<description>Network</description>
@@ -106,7 +118,7 @@
 					<fadetime>300</fadetime>
 					<aspectratio aligny="center" align="center">keep</aspectratio>
 					<texture>status/network.png</texture>
-					<visible>String.IsEqual(Window(Home).Property(router), 0) + Skin.HasSetting(show_net) + System.HasAddon(service.ping.monitor)</visible>
+					<visible>String.IsEqual(Window(Home).Property(router), 0) + Skin.HasSetting(show_net) + System.AddonIsEnabled(service.ping.monitor)</visible>
 				</control>
 				<control type="image">
 					<description>Network</description>
@@ -115,7 +127,7 @@
 					<colordiffuse>red</colordiffuse>
 					<aspectratio aligny="center" align="center">keep</aspectratio>
 					<texture>status/network.png</texture>
-					<visible>!String.IsEqual(Window(Home).Property(router), 0) + Skin.HasSetting(show_net) + System.HasAddon(service.ping.monitor)</visible>
+					<visible>!String.IsEqual(Window(Home).Property(router), 0) + Skin.HasSetting(show_net) + System.AddonIsEnabled(service.ping.monitor)</visible>
 				</control>
 				<control type="image">
 					<description>SCC</description>
@@ -126,7 +138,7 @@
 					<fadetime>300</fadetime>
 					<aspectratio aligny="center" align="center">keep</aspectratio>
 					<texture>status/sc2.png</texture>
-					<visible>String.IsEqual(Window(Home).Property(scc), 0) + Skin.HasSetting(show_net) + System.HasAddon(service.ping.monitor)</visible>
+					<visible>String.IsEqual(Window(Home).Property(scc), 0) + Skin.HasSetting(show_net) + System.AddonIsEnabled(service.ping.monitor)</visible>
 				</control>
 				<control type="image">
 					<description>SCC</description>
@@ -137,7 +149,7 @@
 					<colordiffuse>red</colordiffuse>
 					<aspectratio aligny="center" align="center">keep</aspectratio>
 					<texture>status/sc2.png</texture>
-					<visible>!String.IsEqual(Window(Home).Property(scc), 0) + Skin.HasSetting(show_net) + System.HasAddon(service.ping.monitor)</visible>
+					<visible>!String.IsEqual(Window(Home).Property(scc), 0) + Skin.HasSetting(show_net) + System.AddonIsEnabled(service.ping.monitor)</visible>
 				</control>
 				<control type="image">
 					<description>AVR</description>
@@ -146,7 +158,7 @@
 					<fadetime>300</fadetime>
 					<aspectratio aligny="center" align="center">keep</aspectratio>
 					<texture>status/avr.png</texture>
-					<visible>String.IsEqual(Window(Home).Property(AVR), 0) + Skin.HasSetting(show_net) + System.HasAddon(service.ping.monitor)</visible>
+					<visible>String.IsEqual(Window(Home).Property(AVR), 0) + Skin.HasSetting(show_net) + System.AddonIsEnabled(service.ping.monitor)</visible>
 				</control>
 				<control type="image">
 					<description>AVR</description>
@@ -155,7 +167,7 @@
 					<colordiffuse>red</colordiffuse>
 					<aspectratio aligny="center" align="center">keep</aspectratio>
 					<texture>status/avr.png</texture>
-					<visible>!String.IsEqual(Window(Home).Property(AVR), 0) + Skin.HasSetting(show_net) + System.HasAddon(service.ping.monitor)</visible>
+					<visible>!String.IsEqual(Window(Home).Property(AVR), 0) + Skin.HasSetting(show_net) + System.AddonIsEnabled(service.ping.monitor)</visible>
 				</control>
 				<control type="image">
 					<description>NAS</description>
@@ -164,7 +176,7 @@
 					<fadetime>300</fadetime>
 					<aspectratio aligny="center" align="center">keep</aspectratio>
 					<texture>status/nas.png</texture>
-					<visible>String.IsEqual(Window(Home).Property(NAS), 0) + Skin.HasSetting(show_nas) + System.HasAddon(service.ping.monitor)</visible>
+					<visible>String.IsEqual(Window(Home).Property(NAS), 0) + Skin.HasSetting(show_nas) + System.AddonIsEnabled(service.ping.monitor)</visible>
 				</control>
 				<control type="image">
 					<description>NAS</description>
@@ -173,7 +185,7 @@
 					<colordiffuse>red</colordiffuse>
 					<aspectratio aligny="center" align="center">keep</aspectratio>
 					<texture>status/nas.png</texture>
-					<visible>!String.IsEqual(Window(Home).Property(NAS), 0) + Skin.HasSetting(show_nas) + System.HasAddon(service.ping.monitor)</visible>
+					<visible>!String.IsEqual(Window(Home).Property(NAS), 0) + Skin.HasSetting(show_nas) + System.AddonIsEnabled(service.ping.monitor)</visible>
 				</control>
 			</control>
 	</include>

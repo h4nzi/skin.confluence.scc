@@ -175,7 +175,7 @@
 						<width>16</width>
 						<height>16</height>
 						<texture>$VAR[PVRTimerIcon]</texture>
-						<animation effect="slide" start="0,0" end="40,0" condition="$EXP[epg_event_live]">Conditional</animation>
+						<animation effect="slide" start="0,0" end="40,0" condition="$EXP[epg_event_live]">Conditional</animation> <!--mod -->
 					</control>
 					<include>ViewsPVRGuideLive</include>
 				</itemlayout>
@@ -212,7 +212,7 @@
 						<width>16</width>
 						<height>16</height>
 						<texture>$VAR[PVRTimerIcon]</texture>
-						<animation effect="slide" start="0,0" end="40,0" condition="$EXP[epg_event_live]">Conditional</animation>
+						<animation effect="slide" start="0,0" end="40,0" condition="$EXP[epg_event_live]">Conditional</animation> <!--mod -->
 					</control>
 					<include>ViewsPVRGuideLive</include>
 				</focusedlayout>

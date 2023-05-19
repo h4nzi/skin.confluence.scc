@@ -34,7 +34,8 @@
 						<textcolor>white</textcolor>
 						<shadowcolor>black</shadowcolor>
 						<label>Narozeniny slaví [COLOR orange]$INFO[Window(Home).Property(Birthday)][/COLOR]</label>
-						<visible>!String.IsEmpty(Window(Home).Property(Birthday)) + System.HasAddon(service.birthdays.reminder)</visible>
+						<visible>!String.IsEmpty(Window(Home).Property(Birthday)) + System.AddonIsEnabled(service.birthdays.reminder)</visible>
+						<!-- <visible>true</visible> -->
 					</control>
 				</control>
 		<control type="group">
@@ -79,6 +80,7 @@
 					<align>right</align>
 					<itemgap>0</itemgap>
 					<orientation>horizontal</orientation>
+					<!-- <visible>Skin.HasSetting(homepageWeatherinfo) + !String.IsEmpty(Weather.Plugin) + String.IsEmpty(Window(Home).Property(Birthday))</visible> -->
 					<visible>Skin.HasSetting(homepageWeatherinfo) + !String.IsEmpty(Weather.Plugin)</visible>
 					<animation effect="slide" start="0,0" end="0,30" time="75" condition="Skin.HasSetting(InfoboxOn)">conditional</animation>
 					<animation effect="slide" start="0,0" end="0,40" time="75" condition="Skin.HasSetting(HolidaysOn) + System.AddonIsEnabled(service.holiday.vanio)">conditional</animation>
