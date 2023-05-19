@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 	<include name="PosterWrapView">
-		<include>AdvancedRating</include>
+	
 		<control type="grouplist">
-			<visible>Control.IsVisible(501)</visible><!-- plakát -->
+			<visible>Control.IsVisible(501)</visible>
 			<left>60</left>
 			<top>80</top>
 			<width>1160</width>
@@ -293,8 +293,7 @@
 			</control>
 		</control>
 	</include>
-	<include name="PosterWrapView2_Fanart"><!-- fanoušovské umění -->
-		<include>AdvancedRating</include>
+	<include name="PosterWrapView2_Fanart">
 		<control type="group">
 			<left>0</left>
 			<top>350</top>
@@ -779,8 +778,7 @@
 			</control>
 		</control>
 	</include>
-	<include name="MediaListView3"><!-- informace o mediu 2 -->
-		<include>AdvancedRating</include>
+	<include name="MediaListView3">
 		<control type="group">
 			<visible>Control.IsVisible(503)</visible>
 			<include>VisibleFadeEffect</include>
@@ -1212,8 +1210,7 @@
 			</control>
 		</control>
 	</include>
-	<include name="MediaListView2"><!-- informace o mediu-->
-		<include>AdvancedRating</include>
+	<include name="MediaListView2">
 		<control type="group">
 			<visible>Control.IsVisible(504)</visible>
 			<include>VisibleFadeEffect</include>
@@ -1425,10 +1422,9 @@
 					<include>VideoCodecFlaggingConditions</include>
 					<include>AudioCodecFlaggingConditions</include>
 					<include>AudioChannelsFlaggingConditions</include>
-					<include>AspectCodecFlaggingConditions</include>				
+					<include>AspectCodecFlaggingConditions</include>
 					<include>VideoStereoscopicsFlaggingConditions</include>
 					<include>VideoTypeHackFlaggingConditions</include>
-					<include>MyTestImage</include>
 				</control>
 				<control type="image">
 					<left>0</left>
@@ -1453,12 +1449,12 @@
 					</control>
 					<control type="label">
 						<description>Year Value</description>
-						<left>400</left>
+						<left>430</left>
 						<top>360</top>
-						<width>80</width>
+						<width>340</width>
 						<height>25</height>
 						<label fallback="10005">$INFO[listitem.Year]</label>
-						<align>right</align>
+						<align>left</align>
 						<aligny>center</aligny>
 						<font>font13</font>
 						<scroll>true</scroll>
@@ -1479,10 +1475,10 @@
 						<description>Duration Value</description>
 						<left>400</left>
 						<top>335</top>
-						<width>80</width>
+						<width>100</width>
 						<height>25</height>
 						<label fallback="10005">$INFO[listitem.Duration]</label>
-						<align>right</align>
+						<align>left</align>
 						<aligny>center</aligny>
 						<font>font13</font>
 						<scroll>true</scroll>
@@ -1549,7 +1545,7 @@
 					<left>10</left>
 					<top>397</top>
 					<width>490</width>
-					<height>145</height>
+					<height>168</height>
 					<font>font13</font>
 					<align>justify</align>
 					<textcolor>yellow</textcolor>
@@ -1692,8 +1688,7 @@
 			</control>
 		</control>
 	</include>
-	<include name="MediaListView4"><!-- informace o mediu 3 -->
-		<include>AdvancedRating</include>
+	<include name="MediaListView4">
 		<control type="group">
 			<visible>Control.IsVisible(515)</visible>
 			<include>VisibleFadeEffect</include>
@@ -2023,7 +2018,6 @@
 					<itemgap>2</itemgap>
 					<orientation>horizontal</orientation>
 					<include>VideoCodecFlaggingConditions</include>
-					<include>VideoHDR</include>
 					<include>AudioCodecFlaggingConditions</include>
 					<include>AudioChannelsFlaggingConditions</include>
 					<include>AspectCodecFlaggingConditions</include>

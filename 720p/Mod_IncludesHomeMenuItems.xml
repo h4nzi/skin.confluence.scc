@@ -25,7 +25,7 @@
 			<include>ButtonHomeSubCommonValues</include>
 			<label>Historie sledování</label>
 			<onclick>RunAddon(script.vip)</onclick>
-			<onclick>ActivateWindow(10025,plugin://plugin.video.stream-cinema-2-release/watched/,return)</onclick> <!-- historie sledování -->
+			<onclick>ActivateWindow(10025,plugin://plugin.video.stream-cinema-2-release/watched/,return)</onclick>
 			<visible>Skin.HasSetting(HistoryOn)</visible>
 		</control>
 		<control type="button" id="90559">
@@ -74,7 +74,7 @@
 			<include>ButtonHomeSubCommonValues</include>
 			<label>Nastavení</label>
 			<onclick>PlayMedia("plugin://plugin.video.stream-cinema-2-release/command/?command=open-settings",return)</onclick>
-			<visible>!System.IsMaster + Skin.HasSetting(SettingsOn)</visible> <!-- ??? -->
+			<visible>!System.IsMaster + Skin.HasSetting(SettingsOn)</visible>
 		</control>
 		
 		<control type="image" id="90566">
@@ -123,7 +123,7 @@
 			<include>ButtonHomeSubCommonValues</include>
 			<label>Seznamy trendů</label>
 			<onclick>PlayMedia(&quot;plugin://plugin.video.stream-cinema-2-release/command/?command=open-settings&quot;,return)</onclick>
-			<visible>!System.IsMaster + Skin.HasSetting(SettingsOn)</visible> <!-- ??? -->
+			<visible>!System.IsMaster + Skin.HasSetting(SettingsOn)</visible>
 		</control>
 		<control type="image" id="90607">
 			<width>35</width>
@@ -131,28 +131,11 @@
 			<texture border="0,0,0,3">HomeSubEnd.png</texture>
 		</control>
 	</include>
-	<include name="ModHomeSubMenuSystem">
-		<control type="button" id="90999">
+	<include name="HomeSubmenuSystem">
+		<control type="button" id="90555">
 			<include>ButtonHomeSubCommonValues</include>
 			<label>Nastavení vzhledu</label>
 			<onclick>ActivateWindow(skinsettings)</onclick>
 		</control>
 	</include>
-	<include name="HomeAddonItemsVideosEnhanced">
-		<item>
-			<label>$INFO[system.addontitle(Skin.String(HomeVideosButton6))]</label>
-			<onclick>RunAddon($INFO[Skin.String(HomeVideosButton6)])</onclick>
-			<icon>$INFO[system.addonicon(Skin.String(HomeVideosButton6))]</icon>
-			<thumb/>
-			<visible>!String.IsEmpty(Skin.String(HomeVideosButton6))</visible>
-		</item>
-		<item>
-			<label>$INFO[system.addontitle(Skin.String(HomeVideosButton7))]</label>
-			<onclick>RunAddon($INFO[Skin.String(HomeVideosButton7)])</onclick>
-			<icon>$INFO[system.addonicon(Skin.String(HomeVideosButton7))]</icon>
-			<thumb/>
-			<visible>!String.IsEmpty(Skin.String(HomeVideosButton7))</visible>
-		</item>
-	</include>
-
 </includes>

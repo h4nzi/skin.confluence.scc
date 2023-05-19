@@ -58,8 +58,6 @@
 					<include>VisibleFadeEffect</include>
 					<visible>!Control.IsVisible(50) + [String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE,episode) | String.IsEqual(ListItem.DBTYPE,musicvideo)]</visible>
 					<include>VideoCodecFlaggingConditions</include>
-					<include>VideoHDR</include>
-					<!-- <include>ItemInfoGeneral</include> --><!-- Mod_ItemInfo.xml -->
 					<include>AudioCodecFlaggingConditions</include>
 					<include>AudioChannelsFlaggingConditions</include>
 					<include>AspectCodecFlaggingConditions</include>

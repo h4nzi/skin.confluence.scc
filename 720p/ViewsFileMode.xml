@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 	<include name="CommonRootView">
-		<include>AdvancedRating</include>
 		<control type="group">
-			<visible>Control.IsVisible(50)</visible><!-- seznam -->
+			<visible>Control.IsVisible(50)</visible>
 			<include>VisibleFadeEffect</include>
 			<control type="list" id="50">
 				<left>70</left>
@@ -230,8 +229,7 @@
 			</control>
 		</control>
 	</include>
-	<include name="ThumbnailView"><!-- náhled -->
-		<include>AdvancedRating</include>
+	<include name="ThumbnailView">
 		<control type="group">
 			<visible>Control.IsVisible(500)</visible>
 			<include>VisibleFadeEffect</include>
@@ -423,7 +421,6 @@
 		</control>
 	</include>
 	<include name="WideIconView">
-		<include>AdvancedRating</include>
 		<control type="group">
 			<visible>Control.IsVisible(505)</visible>
 			<include>VisibleFadeEffect</include>
@@ -498,11 +495,9 @@
 				<orientation>vertical</orientation>
 				<visible>Control.IsVisible(505)</visible>
 			</control>
-			
 		</control>
 	</include>
-	<include name="FullWidthList"><!-- velký seznam -->
-		<include>AdvancedRating</include>
+	<include name="FullWidthList">
 		<control type="group">
 			<visible>Control.IsVisible(51)</visible>
 			<include>VisibleFadeEffect</include>

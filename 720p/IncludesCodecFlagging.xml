@@ -15,36 +15,6 @@
 			<aspectratio align="left">keep</aspectratio>
 			<texture>$VAR[videocodec,flagging/video/,.png]</texture>
 		</control>
-		<!-- <control type="image"> -->
-			<!-- <description>hdr</description> -->
-			<!-- <width>80</width> -->
-			<!-- <height>35</height> -->
-			<!-- <aspectratio align="left">keep</aspectratio> -->
-			<!-- <texture>$VAR[videohdr,flagging/videohdr/,.png]</texture> -->
-		<!-- </control> -->
-		<!-- <control type="image"> -->
-			<!-- <description>VideoHDR</description> -->
-			<!-- <width>85</width> -->
-			<!-- <height>35</height> -->
-			<!-- <aspectratio align="right">keep</aspectratio> -->
-			<!-- <texture>$INFO[ListItem.HdrType,flagging/videohdr/,.png]</texture> -->
-		<!-- </control> -->
-	</include>
-	<include name="VideoHDR">
-		<control type="image">
-			<description>hdr</description>
-			<width>80</width>
-			<height>35</height>
-			<aspectratio align="left">keep</aspectratio>
-			<texture>$VAR[videohdr,flagging/videohdr/,.png]</texture>
-		</control>
-		<!-- <control type="image"> -->
-			<!-- <description>VideoHDR</description> -->
-			<!-- <width>85</width> -->
-			<!-- <height>35</height> -->
-			<!-- <aspectratio align="right">keep</aspectratio> -->
-			<!-- <texture>$INFO[ListItem.HdrType,flagging/videohdr/,.png]</texture> -->
-		<!-- </control> -->
 	</include>
 	<include name="VideoStereoscopicsFlaggingConditions">
 		<control type="image">
