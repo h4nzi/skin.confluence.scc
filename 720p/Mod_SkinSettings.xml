@@ -13,9 +13,9 @@
 			<label2>Výběr položek</label2>
 			<visible>!Skin.HasSetting(HomeMenuNoSCCButton) + System.AddonIsEnabled(plugin.video.stream-cinema-2-release)</visible>
 		</item>
-		<!-- <item id="8"> -->
-			<!-- <label>OSD Setting</label> -->
-		<!-- </item> -->
+		<item id="8">
+			<label>OSD Setting</label>
+		</item>
 	</include>
 	<include name="Ads">
 		<item id="7">

@@ -6,7 +6,7 @@
         <start reset="true">Window.IsActive(videoosd) + Skin.HasSetting(OSDAutoClose)</start>
         <reset>Window.IsActive(videoosd) + !System.IdleTime(1) + Integer.IsGreaterOrEqual(Skin.TimerElapsedSecs(autoclosevideoosd), 1)</reset>
         <stop>!Window.IsActive(videoosd) | String.IsEmpty(Skin.String(OSDAutoCloseTime)) + Integer.IsGreaterOrEqual(Skin.TimerElapsedSecs(autoclosevideoosd), 4) | !String.IsEmpty(Skin.String(OSDAutoCloseTime)) + Integer.IsGreaterOrEqual(Skin.TimerElapsedSecs(autoclosevideoosd),Skin.Numeric(OSDAutoCloseTime))</stop>
-        <onstop>Dialog.Close(videoosd)</onstop>
+        <onstop>Dialog.Close(videoosd)</onstop><!-- zjistit funkci v videoOSC.xml -->
     </timer>
     <timer>
         <name>1110_topbaroverlay</name>
