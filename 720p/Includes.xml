@@ -1594,7 +1594,7 @@
 		</animation>
 		<hitrect x="0" y="530" w="1280" h="120" />
 		<left>0</left>
-		<top>190r</top>
+		<top>200r</top>
 		<width>1280</width>
 		<height>200</height>
 		<pagecontrol/>
@@ -1652,7 +1652,7 @@
 				<height>120</height>
 				<aspectratio aligny="bottom">keep</aspectratio>
 				<bordertexture border="5">folder-focus.png</bordertexture>
-				<bordersize>3</bordersize>
+				<bordersize>7</bordersize> <!-- mod -->
 				<texture background="true">$INFO[ListItem.Icon]</texture>
 				<visible>ControlGroup(9002).HasFocus</visible>
 			</control>
@@ -1670,7 +1670,7 @@
 				<width>180</width>
 				<height>20</height>
 				<font>font12</font>
-				<textcolor>white</textcolor>
+				<textcolor>white</textcolor> <!-- mod -->
 				<align>center</align>
 				<aligny>center</aligny>
 				<label>$INFO[ListItem.Label]</label>

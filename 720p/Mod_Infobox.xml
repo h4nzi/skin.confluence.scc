@@ -30,7 +30,7 @@
 					<font>font12</font>
 					<textcolor>white</textcolor>
 					<shadowcolor>black</shadowcolor>
-					<label>RX/TX: [COLOR lime]$INFO[Window(Home).Property(RX)][/COLOR] / [COLOR yellow]$INFO[Window(Home).Property(TX)][/COLOR] Mbps</label>
+					<label>RX/TX: [COLOR blue]$INFO[Window(Home).Property(RX)] / $INFO[Window(Home).Property(TX)] Mbps[/COLOR]</label>
 					<visible>Skin.HasSetting(show_RXTX) + System.AddonIsEnabled(service.netspeed.monitor)</visible>
 					<!-- <visible>Skin.HasSetting(show_RXTX) + System.AddonIsEnabled(service.net)</visible> -->
 				</control>
@@ -42,7 +42,7 @@
 					<font>font12</font>
 					<textcolor>white</textcolor>
 					<shadowcolor>black</shadowcolor>
-					<label>CPU: [COLOR cyan]$INFO[System.CoreUsage(0)]%[/COLOR] / [COLOR cyan]$INFO[System.CPUTemperature][/COLOR] / [COLOR cyan]$INFO[System.CpuFrequency][/COLOR]</label>
+					<label>CPU: [COLOR blue]$INFO[System.CoreUsage(0)]% / $INFO[System.CPUTemperature] / $INFO[System.CpuFrequency][/COLOR]</label>
 					<visible>Skin.HasSetting(show_CPUTemp) + System.CpuUsage + System.Platform.Linux + !System.Platform.Android</visible>
 				</control>
 				<control type="label">
@@ -53,7 +53,7 @@
 					<font>font12</font>
 					<textcolor>white</textcolor>
 					<shadowcolor>black</shadowcolor>
-					<label>CPU: [COLOR cyan]$INFO[System.CoreUsage(0)]%/$INFO[System.CPUTemperature]/$INFO[System.CpuFrequency][/COLOR]</label>
+					<label>CPU: [COLOR blue]$INFO[System.CoreUsage(0)]%/$INFO[System.CPUTemperature]/$INFO[System.CpuFrequency][/COLOR]</label>
 					<visible>Skin.HasSetting(show_CPUTemp) + System.CpuUsage + System.Platform.Windows</visible>
 				</control>
 				<control type="group">
@@ -79,7 +79,7 @@
 						<right>30</right>
 						<top>5</top>
 						<aligny>center</aligny>
-						<width>100</width>
+						<width>120</width>
 						<fadetime>300</fadetime>
 						<label>MEM: $INFO[system.memory(used)]</label>
 						<font>font12</font>
@@ -96,6 +96,16 @@
 						<info>System.Memory(used)</info>
 						<visible>!System.Platform.Android</visible>
 					</control>
+				</control>
+				<control type="label">
+					<width>auto</width>
+					<fadetime>300</fadetime>
+					<aligny>center</aligny>
+					<font>font12</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
+					<label>FPS: [COLOR blue]$INFO[System.FPS] Hz[/COLOR]</label>
+					<visible>Skin.HasSetting(show_FPS)</visible>
 				</control>
 				<control type="image">
 					<description>Internet</description>
@@ -114,7 +124,7 @@
 					<colordiffuse>red</colordiffuse>
 					<aspectratio aligny="center" align="center">keep</aspectratio>
 					<texture>status/internet.png</texture>
-					<visible>!String.IsEqual(Window(Home).Property(inet), 0) + Skin.HasSetting(show_net) + System.AddonIsEnabled(service.ping.monitor)</visible>
+					<visible>String.IsEqual(Window(Home).Property(inet), 1) + Skin.HasSetting(show_net) + System.AddonIsEnabled(service.ping.monitor)</visible>
 				</control>
 				<control type="image">
 					<description>Network</description>
@@ -132,29 +142,7 @@
 					<colordiffuse>red</colordiffuse>
 					<aspectratio aligny="center" align="center">keep</aspectratio>
 					<texture>status/network.png</texture>
-					<visible>!String.IsEqual(Window(Home).Property(router), 0) + Skin.HasSetting(show_net) + System.AddonIsEnabled(service.ping.monitor)</visible>
-				</control>
-				<control type="image">
-					<description>SCC</description>
-					<top>-5</top>
-					<width>35</width>
-					<height>35</height>
-					<aligny>center</aligny>
-					<fadetime>300</fadetime>
-					<aspectratio aligny="center" align="center">keep</aspectratio>
-					<texture>status/sc2.png</texture>
-					<visible>String.IsEqual(Window(Home).Property(scc), 0) + Skin.HasSetting(show_net) + System.AddonIsEnabled(service.ping.monitor)</visible>
-				</control>
-				<control type="image">
-					<description>SCC</description>
-					<top>-5</top>
-					<width>35</width>
-					<height>35</height>
-					<fadetime>300</fadetime>
-					<colordiffuse>red</colordiffuse>
-					<aspectratio aligny="center" align="center">keep</aspectratio>
-					<texture>status/sc2.png</texture>
-					<visible>!String.IsEqual(Window(Home).Property(scc), 0) + Skin.HasSetting(show_net) + System.AddonIsEnabled(service.ping.monitor)</visible>
+					<visible>String.IsEqual(Window(Home).Property(router), 1) + Skin.HasSetting(show_net) + System.AddonIsEnabled(service.ping.monitor)</visible>
 				</control>
 				<control type="image">
 					<description>AVR</description>
@@ -172,7 +160,7 @@
 					<colordiffuse>red</colordiffuse>
 					<aspectratio aligny="center" align="center">keep</aspectratio>
 					<texture>status/avr.png</texture>
-					<visible>!String.IsEqual(Window(Home).Property(AVR), 0) + Skin.HasSetting(show_net) + System.AddonIsEnabled(service.ping.monitor)</visible>
+					<visible>String.IsEqual(Window(Home).Property(AVR), 1) + Skin.HasSetting(show_net) + System.AddonIsEnabled(service.ping.monitor)</visible>
 				</control>
 				<control type="image">
 					<description>NAS</description>
@@ -190,7 +178,7 @@
 					<colordiffuse>red</colordiffuse>
 					<aspectratio aligny="center" align="center">keep</aspectratio>
 					<texture>status/nas.png</texture>
-					<visible>!String.IsEqual(Window(Home).Property(NAS), 0) + Skin.HasSetting(show_nas) + System.AddonIsEnabled(service.ping.monitor)</visible>
+					<visible>String.IsEqual(Window(Home).Property(NAS), 1) + Skin.HasSetting(show_nas) + System.AddonIsEnabled(service.ping.monitor)</visible>
 				</control>
 				<control type="image"><!-- mod shopping vanio -->
 					<description>shoping vanio</description>
@@ -198,7 +186,7 @@
 					<fadetime>300</fadetime>
 					<aspectratio aligny="center" align="center">keep</aspectratio>
 					<texture>status/shopping.png</texture>
-					<visible>String.IsEqual(Window(Home).Property(obchody, False) + String.IsEqual(Window(Home).Property(public_holiday), True) + System.HasAddon(service.holidays)</visible>
+					<visible>String.IsEqual(Window(Home).Property(obchody), False) + String.IsEqual(Window(Home).Property(public_holiday), True) + System.HasAddon(service.holidays)</visible>
 				</control>				
 				<control type="image"><!-- mod shopping vanio -->
 					<description>shoping vanio</description>
@@ -208,6 +196,28 @@
 					<aspectratio aligny="center" align="center">keep</aspectratio>
 					<texture>status/shopping.png</texture>
 					<visible>String.IsEqual(Window(Home).Property(obchody), True) + String.IsEqual(Window(Home).Property(public_holiday), True) + System.HasAddon(service.holidays)</visible>
+				</control>
+				<control type="label">
+					<description>SCC Monitor</description>
+					<width>auto</width>
+					<fadetime>300</fadetime>
+					<aligny>center</aligny>
+					<font>font12</font>
+					<textcolor>blue</textcolor>
+					<shadowcolor>black</shadowcolor>
+					<label>SCC</label>
+					<visible>String.IsEqual(Window(Home).Property(SCCStatus), 0) + Skin.HasSetting(show_scc) + System.AddonIsEnabled(service.scc.availability)</visible>
+				</control>
+				<control type="label">
+					<description>SCC Monitor</description>
+					<width>auto</width>
+					<fadetime>300</fadetime>
+					<aligny>center</aligny>
+					<font>font12</font>
+					<textcolor>red</textcolor>
+					<shadowcolor>black</shadowcolor>
+					<label>SCC</label>
+					<visible>String.IsEqual(Window(Home).Property(SCCStatus), 1) + Skin.HasSetting(show_scc) + System.AddonIsEnabled(service.scc.availability)</visible>
 				</control>
 			</control>
 	</include>

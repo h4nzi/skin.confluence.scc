@@ -126,6 +126,7 @@
 			<visible>Container(9000).HasFocus(12) + [PVR.IsRecording | PVR.HasNonRecordingTimer]</visible>
 			<include>VisibleFadeEffect</include>
 			<include>Window_OpenClose_Animation</include>
+			<include>AdvancedSettingsAnimation</include> <!-- mod -->
 			<animation effect="fade" start="100" end="0" time="150" condition="Window.IsActive(Favourites)">conditional</animation>
 			<control type="group">
 				<animation effect="slide" start="0,0" end="0,100" time="0" condition="PVR.IsRecording">conditional</animation>
@@ -1076,9 +1077,16 @@
 			<depth>DepthMenu</depth>
 			<onup>9001</onup>
 			<ondown>21</ondown>
-			<control type="fixedlist" id="700">
-				<animation effect="slide" start="0,0" end="-91,0" time="0" condition="String.IsEqual(Container(700).NumItems,2) | String.IsEqual(Container(700).NumItems,4)">conditional</animation>
-				<animation effect="slide" start="0,0" end="91,0" time="0" condition="String.IsEqual(Container(700).NumItems,6)">conditional</animation>
+			<control type="list" id="700">
+				<!-- <animation effect="slide" start="0,0" end="-91,0" time="0" condition="String.IsEqual(Container(700).NumItems,2) | String.IsEqual(Container(700).NumItems,4)">conditional</animation> -->
+				<!-- <animation effect="slide" start="0,0" end="91,0" time="0" condition="String.IsEqual(Container(700).NumItems,6)">conditional</animation> -->
+				<animation effect="slide" start="0,0" end="3,0" time="0" condition="String.IsEqual(Container(700).NumItems,7)">conditional</animation> <!-- mod vícenásobný -->
+				<animation effect="slide" start="0,0" end="94,0" time="0" condition="String.IsEqual(Container(700).NumItems,6)">conditional</animation>
+				<animation effect="slide" start="0,0" end="185,0" time="0" condition="String.IsEqual(Container(700).NumItems,5)">conditional</animation>
+				<animation effect="slide" start="0,0" end="276,0" time="0" condition="String.IsEqual(Container(700).NumItems,4)">conditional</animation>
+				<animation effect="slide" start="0,0" end="367,0" time="0" condition="String.IsEqual(Container(700).NumItems,3)">conditional</animation>
+				<animation effect="slide" start="0,0" end="458,0" time="0" condition="String.IsEqual(Container(700).NumItems,2)">conditional</animation>
+				<animation effect="slide" start="0,0" end="549,0" time="0" condition="String.IsEqual(Container(700).NumItems,1)">conditional</animation>
 				<visible>Container(9000).HasFocus(2) | Container(9000).HasFocus(10) | Container(9000).HasFocus(11)</visible>
 				<onleft>700</onleft>
 				<onright>700</onright>
@@ -1258,7 +1266,7 @@
 				</control>
 			</control>
 		</control>
-		<control type="group">
+		<control type="group"> <!-- mod -->
 			<depth>DepthHeader</depth>
 			<control type="image">
 				<description>LOGO</description>
@@ -1270,109 +1278,11 @@
 				<texture>textures/confluence_logo_mod.png</texture>
 				<include>VisibleFadeEffect</include>
 				<include>Window_OpenClose_Animation</include>
-				<!-- <visible>!Skin.HasSetting(homepageWeatherinfo)</visible> -->
 				<visible>Skin.HasSetting(LogoOn)</visible>
 			</control>
-			<control type="label">
-					<description>master</description>
-					<left>10</left>
-					<top>25</top>
-					<width>100</width>
-					<height>35</height>
-					<align>left</align>
-					<aligny>center</aligny>
-					<font>font12</font>
-					<textcolor>white</textcolor>
-					<shadowcolor>black</shadowcolor>
-					<label>MASTER</label>
-				</control>
-			<include>Mod_Clock</include>
-			<include>HWInfobar</include>
-			<include>Calendar</include>
-			<!-- <control type="group"> -->
-				<!-- <left>20</left> -->
-				<!-- <top>0</top> -->
-				<!-- <visible>Skin.HasSetting(homepageWeatherinfo) + !String.IsEmpty(Weather.Plugin)</visible> -->
-				<!-- <include>Window_OpenClose_Animation</include> -->
-				<!-- <control type="image"> -->
-					<!-- <description>Weather image</description> -->
-					<!-- <left>0</left> -->
-					<!-- <top>0</top> -->
-					<!-- <width>60</width> -->
-					<!-- <height>60</height> -->
-					<!-- <aspectratio>keep</aspectratio> -->
-					<!-- <texture>$INFO[Weather.ConditionsIcon]</texture> -->
-				<!-- </control> -->
-				<!-- <control type="label"> -->
-					<!-- <description>Location label</description> -->
-					<!-- <left>65</left> -->
-					<!-- <top>5</top> -->
-					<!-- <width>500</width> -->
-					<!-- <height>15</height> -->
-					<!-- <align>left</align> -->
-					<!-- <aligny>center</aligny> -->
-					<!-- <font>font10</font> -->
-					<!-- <textcolor>white</textcolor> -->
-					<!-- <shadowcolor>black</shadowcolor> -->
-					<!-- <label>$INFO[Window(Weather).Property(Location)]</label> -->
-				<!-- </control> -->
-				<!-- <control type="grouplist"> -->
-					<!-- <left>65</left> -->
-					<!-- <top>20</top> -->
-					<!-- <width>1000</width> -->
-					<!-- <height>30</height> -->
-					<!-- <orientation>horizontal</orientation> -->
-					<!-- <align>left</align> -->
-					<!-- <itemgap>0</itemgap> -->
-					<!-- <control type="label"> -->
-						<!-- <description>Temp label</description> -->
-						<!-- <width min="0" max="300">auto</width> -->
-						<!-- <height>30</height> -->
-						<!-- <align>left</align> -->
-						<!-- <aligny>center</aligny> -->
-						<!-- <font>font28_title</font> -->
-						<!-- <textcolor>white</textcolor> -->
-						<!-- <shadowcolor>black</shadowcolor> -->
-						<!-- <label>[B]$INFO[Window(Weather).Property(Current.Temperature)][/B]</label> -->
-					<!-- </control> -->
-					<!-- <control type="label"> -->
-						<!-- <description>Temp Units</description> -->
-						<!-- <width min="0" max="100">auto</width> -->
-						<!-- <height>22</height> -->
-						<!-- <font>font10</font> -->
-						<!-- <aligny>center</aligny> -->
-						<!-- <label>$INFO[System.TemperatureUnits]</label> -->
-						<!-- <textcolor>white</textcolor> -->
-						<!-- <shadowcolor>black</shadowcolor> -->
-						<!-- <visible>!String.IsEmpty(Window(Weather).Property(Current.Temperature))</visible> -->
-					<!-- </control> -->
-					<!-- <control type="label"> -->
-						<!-- <description>Conditions Label</description> -->
-						<!-- <width>500</width> -->
-						<!-- <height>22</height> -->
-						<!-- <font>font10</font> -->
-						<!-- <aligny>center</aligny> -->
-						<!-- <label>$INFO[Window(Weather).Property(Current.Condition),  ]</label> -->
-						<!-- <textcolor>grey2</textcolor> -->
-						<!-- <shadowcolor>black</shadowcolor> -->
-					<!-- </control> -->
-				<!-- </control> -->
-			<!-- </control> -->
-			<!-- <control type="label"> -->
-				<!-- <description>Date label</description> -->
-				<!-- <right>20</right> -->
-				<!-- <top>35</top> -->
-				<!-- <width>300</width> -->
-				<!-- <height>15</height> -->
-				<!-- <align>right</align> -->
-				<!-- <aligny>center</aligny> -->
-				<!-- <font>font10</font> -->
-				<!-- <textcolor>white</textcolor> -->
-				<!-- <shadowcolor>black</shadowcolor> -->
-				<!-- <label>$INFO[System.Date]</label> -->
-				<!-- <include>Window_OpenClose_Animation</include> -->
-				<!-- <animation effect="slide" start="0,0" end="-40,0" time="75" condition="Player.Muted">conditional</animation> -->
-			<!-- </control> -->
+			<include>Mod_Clock</include> <!-- mod -->
+			<include>HWInfobar</include> <!-- mod -->
+			<include>Calendar</include> <!-- mod -->
 		</control>
 	</controls>
 </window>

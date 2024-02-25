@@ -156,7 +156,7 @@
 						<left>0</left>
 						<top>0</top>
 						<aspectratio>stretch</aspectratio>
-						<texture border="3">epg-genres/$INFO[ListItem.Property(GenreType)].png</texture>
+						<texture border="3">$VAR[EpgGenreVar]</texture>
 					</control>
 					<control type="label" id="1">
 						<left>10</left>
@@ -193,7 +193,7 @@
 						<left>0</left>
 						<top>0</top>
 						<aspectratio>stretch</aspectratio>
-						<texture border="3">epg-genres/$INFO[ListItem.Property(GenreType)].png</texture>
+						<texture border="3">$VAR[EpgGenreVar]</texture>
 					</control>
 					<control type="label" id="1">
 						<left>10</left>

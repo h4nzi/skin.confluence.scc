@@ -21,7 +21,7 @@
 					<font>font40</font>
 					<textcolor>white</textcolor>
 					<shadowcolor>black</shadowcolor>
-					<label>$INFO[System.Time(hh)]$INFO[Window(Home).Property(Puls)]$INFO[System.Time(mm)]</label>
+					<label>$INFO[System.Time(hh)]$INFO[Window(Home).Property(Pulsy)]$INFO[System.Time(mm)]</label>
 					<animation effect="slide" start="0,0" end="-40,0" time="75" condition="Player.Muted">conditional</animation>
 					<animation effect="slide" start="0,0" end="0,30" time="75" condition="Skin.HasSetting(InfoboxOn)">conditional</animation>
 				</control>
@@ -117,7 +117,7 @@
 		<font>font30</font>
 		<focusedcolor>black</focusedcolor>
 	</include>
-	<include name="MediaRating"> <!-- EASY+ -->
+	<include name="MediaRating">
 		<param name="width">170</param>
 		<param name="visible">true</param>
 		<definition>
@@ -158,19 +158,14 @@
                         <label>$INFO[ListItem.Rating($PARAM[source])]$INFO[ListItem.Votes($PARAM[source]),/]</label>
                         <font>font12</font>
                     </control>
-                    <!-- <include content="MediaFlag"> -->
-                        <!-- <param name="texture" value="textures/flags/flag.png" /> -->
-                    <!-- </include> -->
                 </control>
             </control>
         </definition>
 	</include>
-	<include name="AdvancedRating"> <!-- EASY* -->
-        <!-- <param name="infolabel_prefix"></param> -->
-        <!-- <param name="resolution_var">$VAR[ResolutionFlagVar]</param> -->
+	<include name="AdvancedRating">
 		<param name="visible_left">true</param>
 		<definition>
-            <control type="grouplist"> <!-- EASY+ Ratings amd Votes (from left) -->
+            <control type="grouplist">
                 <orientation>horizontal</orientation>
                 <right>530</right>
                 <top>650</top>
@@ -210,5 +205,19 @@
                 </include>
 			</control>
 		</definition>
+	</include>
+	<include name="ModMediaMenuButtons">
+		<control type="radiobutton" id="6061">
+			<include>ButtonCommonValues</include>
+			<label>Standardní barvy žánrů</label>
+			<selected>Skin.HasSetting(standard_PVRGenres)</selected>
+			<onclick>Skin.ToggleSetting(standard_PVRGenres)</onclick>
+			<visible>Window.IsActive(MyPVRGuide.xml)</visible>
+		</control>
+	</include>
+	<include name="AdvancedSettingsAnimation">
+		<animation effect="slide" start="0,0" end="0,30" time="75" condition="Skin.HasSetting(InfoboxOn)">conditional</animation>
+		<animation effect="slide" start="0,0" end="0,25" time="75" condition="Skin.HasSetting(HolidaysOn) + System.AddonIsEnabled(service.holidays)">conditional</animation>
+		<animation effect="slide" start="0,0" end="0,20" time="75" condition="!String.IsEmpty(Window(Home).Property(Birthday))">conditional</animation>
 	</include>
 </includes>

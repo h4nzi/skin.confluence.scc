@@ -68,16 +68,22 @@
 			<label>Stahování</label>
 			<onclick>RunAddon(script.vip)</onclick>
 			<onclick>ActivateWindow(10025,plugin://plugin.video.stream-cinema-2-release/download-queue/,return)</onclick>
-			<visible>Skin.HasSetting(DownOn)</visible>
+			<visible>Skin.HasSetting(DownloadOn)</visible>
 		</control>
 		<control type="button" id="90565">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>Filtry</label>
+			<onclick>ActivateWindow(10025,plugin://plugin.video.stream-cinema-2-release/filters/,return)</onclick>
+			<visible>Skin.HasSetting(FilterOn)</visible>
+		</control>
+		<control type="button" id="90566">
 			<include>ButtonHomeSubCommonValues</include>
 			<label>Nastavení</label>
 			<onclick>PlayMedia("plugin://plugin.video.stream-cinema-2-release/command/?command=open-settings",return)</onclick>
 			<visible>!System.IsMaster + Skin.HasSetting(SettingsOn)</visible> <!-- ??? -->
 		</control>
 		
-		<control type="image" id="90566">
+		<control type="image" id="90567">
 			<width>35</width>
 			<height>35</height>
 			<texture border="0,0,0,3">HomeSubEnd.png</texture>
@@ -138,7 +144,7 @@
 			<onclick>ActivateWindow(skinsettings)</onclick>
 		</control>
 	</include>
-	<include name="HomeAddonItemsVideosEnhanced"><!-- IncludesHomeMenuItems.xml -->
+	<include name="HomeAddonItemsVideosEnhanced">
 		<item>
 			<label>$INFO[system.addontitle(Skin.String(HomeVideosButton6))]</label>
 			<onclick>RunAddon($INFO[Skin.String(HomeVideosButton6)])</onclick>

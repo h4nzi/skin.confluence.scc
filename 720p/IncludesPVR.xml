@@ -208,6 +208,7 @@
 					<aligny>center</aligny>
 					<visible>Control.IsVisible(5) | Control.IsVisible(6) | Control.IsVisible(7) | Control.IsVisible(8) | Control.IsVisible(10)</visible>
 				</control>
+				<include>ModMediaMenuButtons</include>
 				<control type="button" id="10">
 					<description>Watched Toggle</description>
 					<textwidth>235</textwidth>
