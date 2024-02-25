@@ -4,7 +4,7 @@
 
 	<include name="Calendar">
 		<control type="group">
-			<description>Holidays</description>
+			<description>Birthday and Holidays</description>
 			<right>10</right>
 			<top>30</top>
 			<width>20</width>
@@ -12,7 +12,7 @@
 			<animation effect="slide" start="0,0" end="0,25" time="75" condition="Skin.HasSetting(InfoboxOn)">conditional</animation>
 			<visible>Skin.HasSetting(HolidaysOn)</visible>
 				<control type="label">
-						<description>Birthdays and Holidays</description>
+						<description>Holidays</description>
 						<right>0</right>
 						<top>0</top>
 						<width>250</width>
@@ -21,21 +21,23 @@
 						<font>font12</font>
 						<textcolor>white</textcolor>
 						<shadowcolor>black</shadowcolor>
+						<scroll>true</scroll>
 						<label>Jmeniny slaví [B][COLOR orange]$INFO[Window(Home).Property(name_day)][/COLOR][/B]</label>
-						<visible>System.AddonIsEnabled(service.holidays) + String.IsEqual(Window(Home).Property(public_holiday), False)</visible>
+						<visible>System.AddonIsEnabled(service.holidays)</visible>
 					</control>
 					<control type="label">
-						<description>Birthdays and Holidays</description>
-						<right>0</right>
-						<top>0</top>
+						<description>Holidays</description>
+						<right>210</right>
+						<top>-75</top>
 						<width>350</width>
 						<align>right</align>
 						<aligny>center</aligny>
 						<font>font12</font>
 						<textcolor>white</textcolor>
 						<shadowcolor>black</shadowcolor>
-						<label>[B][COLOR orange]$INFO[Window(Home).Property(name_day)][/COLOR][/B]</label>
-						<visible>System.AddonIsEnabled(service.holidays) + String.IsEqual(Window(Home).Property(public_holiday), True)</visible>
+						<scroll>true</scroll>
+						<label>[B][COLOR red]$INFO[Window(Home).Property(Státní svátek)][/COLOR][/B]</label>
+						<visible>String.IsEqual(Window(Home).Property(public_holiday), True) + System.AddonIsEnabled(service.holidays)</visible>
 					</control>
 					<control type="label">
 						<description>birthday</description>
@@ -47,7 +49,7 @@
 						<font>font12</font>
 						<textcolor>white</textcolor>
 						<shadowcolor>black</shadowcolor>
-						<label>Narozeniny slaví [COLOR orange]$INFO[Window(Home).Property(Birthday)][/COLOR]</label>
+						<label>Narozeniny slaví [B][COLOR orange]$INFO[Window(Home).Property(Birthday)][/COLOR][/B]</label>
 						<visible>!String.IsEmpty(Window(Home).Property(Birthday)) + System.AddonIsEnabled(service.birthdays.reminder)</visible>
 						<!-- <visible>true</visible> -->
 					</control>
@@ -117,9 +119,7 @@
 					<orientation>horizontal</orientation>
 					<!-- <visible>Skin.HasSetting(homepageWeatherinfo) + !String.IsEmpty(Weather.Plugin) + String.IsEmpty(Window(Home).Property(Birthday))</visible> -->
 					<visible>Skin.HasSetting(homepageWeatherinfo) + !String.IsEmpty(Weather.Plugin)</visible>
-					<animation effect="slide" start="0,0" end="0,30" time="75" condition="Skin.HasSetting(InfoboxOn)">conditional</animation>
-					<animation effect="slide" start="0,0" end="0,25" time="75" condition="Skin.HasSetting(HolidaysOn) + System.AddonIsEnabled(service.holidays)">conditional</animation>
-					<animation effect="slide" start="0,0" end="0,20" time="75" condition="!String.IsEmpty(Window(Home).Property(Birthday))">conditional</animation>
+					<include>AdvancedSettingsAnimation</include> <!-- mod řízený posun počasí-->
 					<control type="label">
 						<description>Temp label</description>
 						<top>20</top>

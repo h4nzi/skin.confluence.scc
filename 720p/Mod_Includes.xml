@@ -206,4 +206,18 @@
 			</control>
 		</definition>
 	</include>
+	<include name="ModMediaMenuButtons">
+		<control type="radiobutton" id="6061">
+			<include>ButtonCommonValues</include>
+			<label>Standardní barvy žánrů</label>
+			<selected>Skin.HasSetting(standard_PVRGenres)</selected>
+			<onclick>Skin.ToggleSetting(standard_PVRGenres)</onclick>
+			<visible>Window.IsActive(MyPVRGuide.xml)</visible>
+		</control>
+	</include>
+	<include name="AdvancedSettingsAnimation">
+		<animation effect="slide" start="0,0" end="0,30" time="75" condition="Skin.HasSetting(InfoboxOn)">conditional</animation>
+		<animation effect="slide" start="0,0" end="0,25" time="75" condition="Skin.HasSetting(HolidaysOn) + System.AddonIsEnabled(service.holidays)">conditional</animation>
+		<animation effect="slide" start="0,0" end="0,20" time="75" condition="!String.IsEmpty(Window(Home).Property(Birthday))">conditional</animation>
+	</include>
 </includes>

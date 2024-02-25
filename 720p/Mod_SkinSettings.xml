@@ -56,7 +56,7 @@
 	
 <!-- HOMESCREEN -->
 	<include name="HomeScreen">
-		<control type="label" id="2000">
+		<control type="label" id="2010">
 						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
@@ -66,7 +66,7 @@
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
-					<control type="radiobutton" id="2001">
+					<control type="radiobutton" id="2011">
 						<description>Hide SCC</description>
 						<width>750</width>
 						<height>40</height>
@@ -80,7 +80,7 @@
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<visible>System.AddonIsEnabled(plugin.video.stream-cinema-2-release)</visible>
 					</control>
-					<control type="radiobutton" id="2002">
+					<control type="radiobutton" id="2012">
 						<description>Show Advanced Settings</description>
 						<width>750</width>
 						<height>40</height>
@@ -93,7 +93,7 @@
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 					</control>
-					<control type="radiobutton" id="2003">
+					<control type="radiobutton" id="2013">
 						<description>Show EmuELEC</description>
 						<width>750</width>
 						<height>40</height>
@@ -107,7 +107,7 @@
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<visible>System.AddonIsEnabled(script.emuelec.amlogic-ng.launcher)</visible>
 					</control>
-					<control type="radiobutton" id="2004">
+					<control type="radiobutton" id="2014">
 						<description>Hide favourites</description>
 						<width>750</width>
 						<height>40</height>
@@ -120,7 +120,7 @@
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 					</control>
-					<control type="radiobutton" id="2005">
+					<control type="radiobutton" id="2015">
 						<description>Hide power</description>
 						<width>750</width>
 						<height>40</height>
@@ -227,6 +227,20 @@
 							<visible>Skin.HasSetting(InfoboxOn)</visible>
 						</control>
 						<control type="radiobutton" id="507">
+							<description>Show FPS</description>
+							<width>750</width>
+							<height>40</height>
+							<font>font13</font>
+							<textcolor>grey2</textcolor>
+							<focusedcolor>white</focusedcolor>
+							<label>Zobrazit frekvenci (FPS)</label>
+							<onclick>Skin.ToggleSetting(show_FPS)</onclick>
+							<selected>Skin.HasSetting(show_FPS)</selected>
+							<texturefocus>MenuItemFO.png</texturefocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
+							<visible>Skin.HasSetting(InfoboxOn)</visible>
+						</control>
+						<control type="radiobutton" id="508">
 							<description>Show RX/TX</description>
 							<width>750</width>
 							<height>40</height>
@@ -240,7 +254,7 @@
 							<texturenofocus>MenuItemNF.png</texturenofocus>
 							<visible>Skin.HasSetting(InfoboxOn) + System.AddonIsEnabled(service.netspeed.monitor)</visible>
 						</control>
-						<control type="radiobutton" id="508">
+						<control type="radiobutton" id="509">
 							<description>Show CPU Temp</description>
 							<width>750</width>
 							<height>40</height>
@@ -252,9 +266,9 @@
 							<selected>Skin.HasSetting(show_CPUTemp)</selected>
 							<texturefocus>MenuItemFO.png</texturefocus>
 							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<visible>Skin.HasSetting(InfoboxOn)</visible>
+							<visible>Skin.HasSetting(InfoboxOn) + !System.Platform.Android</visible>
 						</control>
-						<control type="radiobutton" id="509">
+						<control type="radiobutton" id="510">
 							<description>Show MEM</description>
 							<width>750</width>
 							<height>40</height>
@@ -268,7 +282,7 @@
 							<texturenofocus>MenuItemNF.png</texturenofocus>
 							<visible>Skin.HasSetting(InfoboxOn)</visible>
 						</control>
-						<control type="radiobutton" id="510">
+						<control type="radiobutton" id="511">
 							<description>inet/network</description>
 							<width>750</width>
 							<height>40</height>
@@ -282,7 +296,7 @@
 							<texturenofocus>MenuItemNF.png</texturenofocus>
 							<visible>Skin.HasSetting(InfoboxOn) + System.AddonIsEnabled(service.ping.monitor)</visible>
 						</control>
-						<control type="radiobutton" id="511">
+						<control type="radiobutton" id="512">
 							<description>server</description>
 							<width>750</width>
 							<height>40</height>
@@ -295,6 +309,20 @@
 							<texturefocus>MenuItemFO.png</texturefocus>
 							<texturenofocus>MenuItemNF.png</texturenofocus>
 							<visible>Skin.HasSetting(InfoboxOn) + System.AddonIsEnabled(service.ping.monitor)</visible>
+						</control>
+						<control type="radiobutton" id="513">
+							<description>SCC</description>
+							<width>750</width>
+							<height>40</height>
+							<font>font13</font>
+							<textcolor>grey2</textcolor>
+							<focusedcolor>white</focusedcolor>
+							<label>Zobrazit dostupnost SCC</label>
+							<onclick>Skin.ToggleSetting(show_scc)</onclick>
+							<selected>Skin.HasSetting(show_scc)</selected>
+							<texturefocus>MenuItemFO.png</texturefocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
+							<visible>Skin.HasSetting(InfoboxOn) + System.AddonIsEnabled(service.scc.availability)</visible>
 						</control>
 						<control type="image">
 							<description>separator image</description>
@@ -450,19 +478,32 @@
 							<texturenofocus>MenuItemNF.png</texturenofocus>
 						</control>
 						<control type="radiobutton" id="609">
-							<description>down</description>
+							<description>download</description>
 							<width>750</width>
 							<height>45</height>
 							<font>font13</font>
 							<textcolor>grey2</textcolor>
 							<focusedcolor>white</focusedcolor>
 							<label>- Stahování</label>
-							<onclick>Skin.ToggleSetting(DownOn)</onclick>
-							<selected>Skin.HasSetting(DownOn)</selected>
+							<onclick>Skin.ToggleSetting(DownloadOn)</onclick>
+							<selected>Skin.HasSetting(DownloadOn)</selected>
 							<texturefocus>MenuItemFO.png</texturefocus>
 							<texturenofocus>MenuItemNF.png</texturenofocus>
-						</control>						
+						</control>
 						<control type="radiobutton" id="610">
+							<description>filter</description>
+							<width>750</width>
+							<height>40</height>
+							<font>font13</font>
+							<textcolor>grey2</textcolor>
+							<focusedcolor>white</focusedcolor>
+							<label>- Filtry</label>
+							<onclick>Skin.ToggleSetting(FilterOn)</onclick>
+							<selected>Skin.HasSetting(FilterOn)</selected>
+							<texturefocus>MenuItemFO.png</texturefocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
+						</control>
+						<control type="radiobutton" id="611">
 							<description>settings</description>
 							<width>750</width>
 							<height>40</height>
@@ -533,9 +574,9 @@
 							<width>1200</width>
 							<height>200</height>
 							<font>font12</font>
-							<label>Skin obsahuje uživatelské okno, které umožňuje přeskočit televizní reklamu.[CR]K tomu potřebujete namapování příkazu [B][COLOR yellow]activatewindow(1198)[/COLOR][/B] na volné tlačítko vašeho DO.[CR]Stiskem zvoleného tlačítka během sledování pořadu a volbou stanice přeskočíte podstatnou[CR]část reklamy.
-							
-							Více k mapování na https://www.xbmc-kodi.cz/prispevek-mapovani-tlacitek-do-tipy-a-triky</label>
+							<label>Skin obsahuje uživatelské okno, které umožňuje přeskočit televizní reklamu.[CR]K tomu potřebujete namapování příkazu [B][COLOR yellow]activatewindow(1198)[/COLOR][/B] na volné tlačítko vašeho DO.
+							[CR]Stiskem zvoleného tlačítka během sledování pořadu a volbou stanice přeskočíte podstatnou[CR]část reklamy.
+							[CR]Více k mapování na https://www.xbmc-kodi.cz/prispevek-mapovani-tlacitek-do-tipy-a-triky</label>
 							<textcolor>white</textcolor>
 							<autoscroll time="3000" delay="4000" repeat="5000">true</autoscroll>
 						</control>

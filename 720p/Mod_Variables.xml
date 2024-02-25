@@ -16,6 +16,10 @@
 			<value condition="String.Contains(ListItem.HdrType,hlg)">hlg</value>
 			<value>$INFO[ListItem.HdrType]</value>
 		</variable>
+		<variable name="EpgGenreVar">
+			<value condition="!Skin.HasSetting(standard_PVRGenres)">epg-genres/$INFO[ListItem.Property(GenreType)].png</value>
+			<value condition="Skin.HasSetting(standard_PVRGenres)">epg-genres/0.png</value>
+		</variable>
 		<!-- <variable name="Search"> -->
 			<!-- <value condition="!Player.HasVideo">9020</value> -->
 			<!-- <value>601</value> -->

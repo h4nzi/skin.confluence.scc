@@ -126,6 +126,7 @@
 			<visible>Container(9000).HasFocus(12) + [PVR.IsRecording | PVR.HasNonRecordingTimer]</visible>
 			<include>VisibleFadeEffect</include>
 			<include>Window_OpenClose_Animation</include>
+			<include>AdvancedSettingsAnimation</include> <!-- mod -->
 			<animation effect="fade" start="100" end="0" time="150" condition="Window.IsActive(Favourites)">conditional</animation>
 			<control type="group">
 				<animation effect="slide" start="0,0" end="0,100" time="0" condition="PVR.IsRecording">conditional</animation>
@@ -1076,9 +1077,16 @@
 			<depth>DepthMenu</depth>
 			<onup>9001</onup>
 			<ondown>21</ondown>
-			<control type="fixedlist" id="700">
-				<animation effect="slide" start="0,0" end="-91,0" time="0" condition="String.IsEqual(Container(700).NumItems,2) | String.IsEqual(Container(700).NumItems,4)">conditional</animation>
-				<animation effect="slide" start="0,0" end="91,0" time="0" condition="String.IsEqual(Container(700).NumItems,6)">conditional</animation>
+			<control type="list" id="700">
+				<!-- <animation effect="slide" start="0,0" end="-91,0" time="0" condition="String.IsEqual(Container(700).NumItems,2) | String.IsEqual(Container(700).NumItems,4)">conditional</animation> -->
+				<!-- <animation effect="slide" start="0,0" end="91,0" time="0" condition="String.IsEqual(Container(700).NumItems,6)">conditional</animation> -->
+				<animation effect="slide" start="0,0" end="3,0" time="0" condition="String.IsEqual(Container(700).NumItems,7)">conditional</animation> <!-- mod vícenásobný -->
+				<animation effect="slide" start="0,0" end="94,0" time="0" condition="String.IsEqual(Container(700).NumItems,6)">conditional</animation>
+				<animation effect="slide" start="0,0" end="185,0" time="0" condition="String.IsEqual(Container(700).NumItems,5)">conditional</animation>
+				<animation effect="slide" start="0,0" end="276,0" time="0" condition="String.IsEqual(Container(700).NumItems,4)">conditional</animation>
+				<animation effect="slide" start="0,0" end="367,0" time="0" condition="String.IsEqual(Container(700).NumItems,3)">conditional</animation>
+				<animation effect="slide" start="0,0" end="458,0" time="0" condition="String.IsEqual(Container(700).NumItems,2)">conditional</animation>
+				<animation effect="slide" start="0,0" end="549,0" time="0" condition="String.IsEqual(Container(700).NumItems,1)">conditional</animation>
 				<visible>Container(9000).HasFocus(2) | Container(9000).HasFocus(10) | Container(9000).HasFocus(11)</visible>
 				<onleft>700</onleft>
 				<onright>700</onright>
@@ -1258,7 +1266,7 @@
 				</control>
 			</control>
 		</control>
-		<control type="group">
+		<control type="group"> <!-- mod -->
 			<depth>DepthHeader</depth>
 			<control type="image">
 				<description>LOGO</description>
@@ -1272,9 +1280,9 @@
 				<include>Window_OpenClose_Animation</include>
 				<visible>Skin.HasSetting(LogoOn)</visible>
 			</control>
-			<include>Mod_Clock</include>
-			<include>HWInfobar</include>
-			<include>Calendar</include>
+			<include>Mod_Clock</include> <!-- mod -->
+			<include>HWInfobar</include> <!-- mod -->
+			<include>Calendar</include> <!-- mod -->
 		</control>
 	</controls>
 </window>

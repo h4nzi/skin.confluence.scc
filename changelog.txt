@@ -1,3 +1,23 @@
+změna umístění státního svátku
+
+[B]4.7.15.nexus-12[/B]
+- přidaná kontrola dostupnosi SCC do Infoboxu a Nastavení skinu
+- úpravy v mod_calendar.xml
+- zobrazit FPS
+
+[B]4.7.15.nexus-10[/B]
+- přesun informace o nahrávání
+- oprava středění zástupců videodoplňků
+- volba barevných žánrů v EPG
+- v SCC doplněna volba filtrů 
+
+[B]4.7.15.nexus-9[/B]
+- oprava zobrazení v nastavení skinu a infoboxu pro Android
+- oprava posouvání v Nastavení skinu/Úvodní obrazovka
+
+[B]4.7.15.nexus-8[/B]
+- oprava písma v narozeninách
+
 [B]4.7.15.nexus-7[/B]
 - přidáno rozšířené hodnocení
 
@@ -12,6 +32,7 @@
 
 [B]4.7.15.nexus-4[/B]
 - drobné úpravy
+- zvýšen počet zástupců videoaddonů na 7
 
 [B]4.7.15.nexus-3[/B]
 - optimalizace
